@@ -1,0 +1,7 @@
+@use "../../../styles/variables" as *;
+
+.app-container {
+    padding-top: calc($header-height + 20px);
+    background-color: $color-5;
+    min-height: calc(100vh - $footer-height);
+}

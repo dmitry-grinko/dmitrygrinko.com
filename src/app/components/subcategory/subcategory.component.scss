@@ -11,42 +11,44 @@
 }
 
 .breadcrumb-link {
-  background: #f6f8fa;
-  color: #656d76;
+  background: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
   padding: 2px 6px;
   border-radius: 4px;
   font-size: 12px;
   font-weight: 400;
   text-decoration: none;
-  transition: all 0.15s ease;
+  transition: var(--theme-transition);
 
   &:hover {
-    background: #eaeef2;
-    color: #424a53;
+    background: var(--color-bg-tertiary);
+    color: var(--color-text-primary);
     text-decoration: none;
   }
 
   &:visited,
   &:active,
   &:focus {
-    color: #656d76;
+    color: var(--color-text-secondary);
     text-decoration: none;
   }
 }
 
 .breadcrumb-item {
-  background: #f6f8fa;
-  color: #656d76;
+  background: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
   padding: 2px 6px;
   border-radius: 4px;
   font-size: 12px;
   font-weight: 400;
+  transition: var(--theme-transition);
 }
 
 .breadcrumb-separator {
-  color: #656d76;
+  color: var(--color-text-secondary);
   font-weight: 500;
   margin: 0 4px;
+  transition: var(--theme-transition);
 }
 
 .posts-grid {
@@ -59,23 +61,23 @@
   color: inherit;
   display: block;
   border-radius: 6px;
-  transition: all 0.15s ease;
+  transition: var(--theme-transition);
 
   &.focused .post-card {
-    background: #f6f8fa;
+    background: var(--color-surface-hover);
   }
 }
 
 .post-card {
-  background: #ffffff;
-  border: 1px solid #d1d9e0;
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border-primary);
   border-radius: 6px;
   padding: 16px;
-  transition: all 0.15s ease;
+  transition: var(--theme-transition);
   cursor: pointer;
 
   &:hover {
-    background: #f6f8fa;
+    background: var(--color-surface-hover);
   }
 
   h2 {
@@ -84,11 +86,12 @@
     line-height: 1.4;
 
     a {
-      color: #1a1a1a;
+      color: var(--color-text-primary);
       text-decoration: none;
+      transition: var(--theme-transition);
 
       &:hover {
-        color: #1976d2;
+        color: var(--color-text-accent);
       }
     }
   }
@@ -99,25 +102,28 @@
 }
 
 .subcategory-label {
-  background: #f6f8fa;
-  color: #656d76;
+  background: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
   padding: 2px 6px;
   border-radius: 4px;
   font-size: 12px;
   font-weight: 400;
+  transition: var(--theme-transition);
 }
 
 .excerpt {
-  color: #666;
+  color: var(--color-text-secondary);
   line-height: 1.6;
   margin-bottom: 1rem;
+  transition: var(--theme-transition);
 }
 
 .read-more {
-  color: #1976d2;
+  color: var(--color-text-accent);
   text-decoration: none;
   font-weight: 500;
   font-size: 0.9rem;
+  transition: var(--theme-transition);
 
   &:hover {
     text-decoration: underline;
@@ -127,11 +133,13 @@
 .no-posts {
   text-align: center;
   margin-top: 3rem;
-  color: #666;
+  color: var(--color-text-secondary);
+  transition: var(--theme-transition);
 
   h2 {
     margin-bottom: 1rem;
-    color: #999;
+    color: var(--color-text-primary);
+    transition: var(--theme-transition);
   }
 
   p {
@@ -140,9 +148,10 @@
 }
 
 .back-link {
-  color: #1976d2;
+  color: var(--color-text-accent);
   text-decoration: none;
   font-weight: 500;
+  transition: var(--theme-transition);
 
   &:hover {
     text-decoration: underline;

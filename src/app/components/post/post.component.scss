@@ -14,45 +14,48 @@
 }
 
 .breadcrumb-link {
-  background: #f6f8fa;
-  color: #656d76;
+  background: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
   padding: 2px 6px;
   border-radius: 4px;
   font-size: 12px;
   font-weight: 400;
   text-decoration: none;
-  transition: all 0.15s ease;
+  transition: var(--theme-transition);
 
   &:hover {
-    background: #eaeef2;
-    color: #424a53;
+    background: var(--color-bg-tertiary);
+    color: var(--color-text-primary);
     text-decoration: none;
   }
 
   &:visited,
   &:active,
   &:focus {
-    color: #656d76;
+    color: var(--color-text-secondary);
     text-decoration: none;
   }
 }
 
 .breadcrumb-separator {
-  color: #656d76;
+  color: var(--color-text-secondary);
   font-weight: 500;
   margin: 0 4px;
+  transition: var(--theme-transition);
 }
 
 .date {
-  color: #656d76;
+  color: var(--color-text-secondary);
+  transition: var(--theme-transition);
 }
 
 .post-header h1 {
   font-size: 20px;
   font-weight: 600;
-  color: #1f2328;
+  color: var(--color-text-primary);
   margin: 0;
   line-height: 1.25;
+  transition: var(--theme-transition);
 }
 
 .post-content {
@@ -60,7 +63,8 @@
 }
 
 .content {
-  color: #444;
+  color: var(--color-text-primary);
+  transition: var(--theme-transition);
 
   :global(h1),
   :global(h2),
@@ -68,9 +72,10 @@
   :global(h4),
   :global(h5),
   :global(h6) {
-    color: #444;
+    color: var(--color-text-primary);
     margin: 2rem 0 1rem 0;
     font-weight: 600;
+    transition: var(--theme-transition);
   }
 
   :global(h1) { font-size: 2rem; }
@@ -94,11 +99,12 @@
   // Code styling is now handled globally by highlight.js
 
   :global(blockquote) {
-    border-left: 4px solid #1976d2;
+    border-left: 4px solid var(--color-text-accent);
     margin: 1.5rem 0;
     padding: 1rem 1.5rem;
-    background: #f8f9fa;
+    background: var(--color-bg-secondary);
     font-style: italic;
+    transition: var(--theme-transition);
   }
 
   :global(strong) {
@@ -106,14 +112,16 @@
   }
 
   :global(a) {
-    color: #444;
+    color: var(--color-text-accent);
     text-decoration: none;
+    transition: var(--theme-transition);
 
     &:hover,
     &:focus,
     &:visited,
     &:active {
-      color: #444;
+      color: var(--color-text-accent);
+      opacity: 0.8;
     }
   }
 }
@@ -122,36 +130,42 @@
 .loading {
   text-align: center;
   margin-top: 3rem;
-  color: #444;
+  color: var(--color-text-primary);
+  transition: var(--theme-transition);
 }
 
 .not-found {
   h2 {
-    color: #444;
+    color: var(--color-text-primary);
     margin-bottom: 1rem;
+    transition: var(--theme-transition);
   }
 
   p {
-    color: #444;
+    color: var(--color-text-secondary);
     margin-bottom: 2rem;
+    transition: var(--theme-transition);
   }
 }
 
 .home-link {
-  color: #444;
+  color: var(--color-text-accent);
   text-decoration: none;
   font-weight: 500;
+  transition: var(--theme-transition);
 
   &:hover,
   &:focus,
   &:visited,
   &:active {
-    color: #444;
+    color: var(--color-text-accent);
+    opacity: 0.8;
   }
 }
 
 .loading {
-  color: #444;
+  color: var(--color-text-primary);
+  transition: var(--theme-transition);
 }
 
 @media (max-width: 768px) {

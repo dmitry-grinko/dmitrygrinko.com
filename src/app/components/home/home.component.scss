@@ -4,13 +4,15 @@
 
   h2 {
     font-size: 20px;
-    color: #1f2328;
+    color: var(--color-text-primary);
     margin-bottom: 8px;
+    transition: var(--theme-transition);
   }
 
   p {
-    color: #656d76;
+    color: var(--color-text-secondary);
     margin: 0;
+    transition: var(--theme-transition);
   }
 }
 
@@ -24,23 +26,23 @@
   color: inherit;
   display: block;
   border-radius: 6px;
-  transition: all 0.15s ease;
+  transition: var(--theme-transition);
 
   &.focused .post-card {
-    background: #f6f8fa;
+    background: var(--color-surface-hover);
   }
 }
 
 .post-card {
-  background: #ffffff;
-  border: 1px solid #d1d9e0;
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border-primary);
   border-radius: 6px;
   padding: 16px;
-  transition: all 0.15s ease;
+  transition: var(--theme-transition);
   cursor: pointer;
 
   &:hover {
-    background: #f6f8fa;
+    background: var(--color-surface-hover);
   }
 
   h2 {
@@ -48,7 +50,8 @@
     font-size: 16px;
     line-height: 1.25;
     font-weight: 600;
-    color: #1f2328;
+    color: var(--color-text-primary);
+    transition: var(--theme-transition);
   }
 }
 
@@ -57,44 +60,46 @@
 }
 
 .subcategory-label {
-  background: #f6f8fa;
-  color: #656d76;
+  background: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
   padding: 2px 6px;
   border-radius: 4px;
   font-size: 12px;
   font-weight: 400;
   text-decoration: none;
+  transition: var(--theme-transition);
   
   &.clickable {
     cursor: pointer;
-    transition: all 0.15s ease;
     
     &:hover {
-      background: #eaeef2;
-      color: #424a53;
+      background: var(--color-bg-tertiary);
+      color: var(--color-text-primary);
       text-decoration: none;
     }
     
     &:visited,
     &:active,
     &:focus {
-      color: #656d76;
+      color: var(--color-text-secondary);
       text-decoration: none;
     }
   }
 }
 
 .excerpt {
-  color: #656d76;
+  color: var(--color-text-secondary);
   line-height: 1.5;
   margin: 0;
   font-size: 14px;
+  transition: var(--theme-transition);
 }
 
 .no-posts {
   text-align: center;
   margin-top: 3rem;
-  color: #444;
+  color: var(--color-text-primary);
+  transition: var(--theme-transition);
 
   h2 {
     margin-bottom: 1rem;

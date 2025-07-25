@@ -45,9 +45,20 @@
       </div>
     </div>
 
+      <!-- Theme Toggle -->
+      <button 
+        class="theme-toggle-btn"
+        (click)="toggleTheme()"
+        type="button"
+        [attr.aria-label]="getThemeLabel()"
+        [title]="getThemeLabel()"
+      >
+        {{ getThemeIcon() }}
+      </button>
+
       <!-- Help Link -->
       <a routerLink="/help" class="help-link" title="Help & Shortcuts">
-        Help
+        ❓
       </a>
 
       <!-- Search -->

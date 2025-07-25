@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { BlogService } from '../../services/blog.service';
+import { ThemeService, Theme } from '../../services/theme.service';
 import { PostMetadata, CategoryTree } from '../../models/post.interface';
 
 @Component({
@@ -25,16 +26,26 @@ export class HeaderComponent implements OnInit {
   isSearchExpanded: boolean = false;
   currentCategoryIndex: number = -1;
   focusedSearchIndex: number = -1;
+  currentTheme: Theme = 'light';
 
   constructor(
     private blogService: BlogService,
-    private router: Router
+    private router: Router,
+    private themeService: ThemeService
   ) {}
 
   ngOnInit() {
     this.loadCategories();
     this.loadCategoryTree();
     this.loadAllPosts();
+    
+    // Subscribe to theme changes
+    this.themeService.currentTheme$.subscribe(theme => {
+      this.currentTheme = theme;
+    });
+    
+    // Initialize system theme listener
+    this.themeService.initSystemThemeListener();
   }
 
   @HostListener('document:click', ['$event'])
@@ -277,5 +288,17 @@ export class HeaderComponent implements OnInit {
 
   isSearchResultFocused(index: number): boolean {
     return this.focusedSearchIndex === index;
+  }
+
+  toggleTheme(): void {
+    this.themeService.toggleTheme();
+  }
+
+  getThemeIcon(): string {
+    return this.currentTheme === 'light' ? '🌙' : '☀️';
+  }
+
+  getThemeLabel(): string {
+    return this.currentTheme === 'light' ? 'Switch to dark mode' : 'Switch to light mode';
   }
 } 

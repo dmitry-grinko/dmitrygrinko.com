@@ -19,10 +19,11 @@
   h2 {
     font-size: 16px;
     font-weight: 600;
-    color: #1f2328;
+    color: var(--color-text-primary);
     margin-bottom: 24px;
     line-height: 1.4;
     text-align: center;
+    transition: var(--theme-transition);
   }
 }
 
@@ -31,14 +32,16 @@
 
   p {
     font-size: 14px;
-    color: #656d76;
+    color: var(--color-text-secondary);
     line-height: 1.6;
     margin-bottom: 16px;
+    transition: var(--theme-transition);
   }
 
   strong {
-    color: #1f2328;
+    color: var(--color-text-primary);
     font-weight: 600;
+    transition: var(--theme-transition);
   }
 }
 
@@ -49,22 +52,25 @@
 
   li {
     font-size: 14px;
-    color: #656d76;
+    color: var(--color-text-secondary);
     line-height: 1.6;
     margin-bottom: 12px;
     padding-left: 20px;
     position: relative;
+    transition: var(--theme-transition);
 
     &:before {
       content: "✓";
-      color: #0969da;
+      color: var(--color-text-accent);
       font-weight: 600;
       position: absolute;
       left: 0;
+      transition: var(--theme-transition);
     }
 
     strong {
-      color: #1f2328;
+      color: var(--color-text-primary);
+      transition: var(--theme-transition);
     }
   }
 }
@@ -88,8 +94,9 @@
 
   p {
     font-size: 14px;
-    color: #656d76;
+    color: var(--color-text-secondary);
     margin: 0;
+    transition: var(--theme-transition);
   }
 }
 

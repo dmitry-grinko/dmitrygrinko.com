@@ -4,6 +4,7 @@ import { Observable, of, forkJoin } from 'rxjs';
 import { map, catchError, switchMap } from 'rxjs/operators';
 import { marked } from 'marked';
 import hljs from 'highlight.js';
+import { ThemeService } from './theme.service';
 import { Post, PostMetadata, CategoryTree, SubCategory, PredefinedCategories, PredefinedCategory, PredefinedSubcategory } from '../models/post.interface';
 
 @Injectable({
@@ -103,7 +104,10 @@ export class BlogService {
     }
   };
 
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient,
+    private themeService: ThemeService
+  ) {
     // Configure marked for better security and formatting
     marked.setOptions({
       gfm: true,
@@ -113,11 +117,12 @@ export class BlogService {
     // Configure custom renderer for syntax highlighting and image handling
     const renderer = new marked.Renderer();
     
-    renderer.code = function({ text, lang }: { text: string; lang?: string }): string {
+    renderer.code = ({ text, lang }: { text: string; lang?: string }): string => {
       if (lang && hljs.getLanguage(lang)) {
         try {
           const highlighted = hljs.highlight(text, { language: lang }).value;
-          return `<pre><code class="hljs language-${lang}">${highlighted}</code></pre>`;
+          const themeClass = this.themeService.currentTheme === 'dark' ? 'hljs-dark' : 'hljs-light';
+          return `<pre><code class="hljs language-${lang} ${themeClass}">${highlighted}</code></pre>`;
         } catch (err) {
           console.warn('Highlight.js error:', err);
         }
@@ -125,7 +130,8 @@ export class BlogService {
       
       // Fallback to auto-detection
       const autoDetected = hljs.highlightAuto(text);
-      return `<pre><code class="hljs">${autoDetected.value}</code></pre>`;
+      const themeClass = this.themeService.currentTheme === 'dark' ? 'hljs-dark' : 'hljs-light';
+      return `<pre><code class="hljs ${themeClass}">${autoDetected.value}</code></pre>`;
     };
 
     // Configure image renderer for proper path resolution

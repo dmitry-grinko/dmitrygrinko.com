@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -13,7 +13,7 @@ import { PostMetadata, CategoryTree } from '../../models/post.interface';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
   @ViewChild('searchInput') searchInput!: ElementRef<HTMLInputElement>;
   
   categories: string[] = [];
@@ -46,6 +46,11 @@ export class HeaderComponent implements OnInit {
     
     // Initialize system theme listener
     this.themeService.initSystemThemeListener();
+  }
+
+  ngOnDestroy() {
+    // Clean up scroll lock when component is destroyed
+    document.body.classList.remove('scroll-lock');
   }
 
   @HostListener('document:click', ['$event'])
@@ -181,10 +186,20 @@ export class HeaderComponent implements OnInit {
 
   toggleCategoriesDropdown() {
     this.isCategoriesOpen = !this.isCategoriesOpen;
+    this.updateBodyScrollLock();
   }
 
   closeCategoriesDropdown() {
     this.isCategoriesOpen = false;
+    this.updateBodyScrollLock();
+  }
+
+  private updateBodyScrollLock() {
+    if (this.isCategoriesOpen) {
+      document.body.classList.add('scroll-lock');
+    } else {
+      document.body.classList.remove('scroll-lock');
+    }
   }
 
   toggleCategory(categoryName: string) {

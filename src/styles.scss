@@ -49,6 +49,13 @@
   box-sizing: border-box;
 }
 
+/* Prevent rubber band/bounce scrolling effect */
+html, body {
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+  overscroll-behavior-x: none;
+}
+
 html {
   font-size: 14px;
   scroll-behavior: smooth;

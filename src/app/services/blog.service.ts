@@ -58,24 +58,85 @@ export class BlogService {
       slug: 'python',
       subcategories: [
         {
-          name: 'Syntax',
-          slug: 'syntax',
+          name: 'Machine Learning Libraries',
+          slug: 'machine-learning-libraries',
           posts: [
             {
-              title: 'Python Variables and Data Types',
-              slug: 'python-variables-data-types',
-              excerpt: 'Learn about Python variables, data types, and basic syntax fundamentals.'
+              title: 'Scikit-learn',
+              slug: 'scikit-learn',
+              excerpt: 'A comprehensive guide to scikit-learn, the most popular machine learning library in Python for building and evaluating ML models.'
+            },
+            {
+              title: 'XGBoost',
+              slug: 'xgboost',
+              excerpt: 'Learn about XGBoost, the powerful gradient boosting framework that dominates machine learning competitions and real-world applications.'
+            },
+            {
+              title: 'LightGBM',
+              slug: 'lightgbm',
+              excerpt: 'Explore LightGBM, Microsoft\'s fast and efficient gradient boosting framework designed for high performance and low memory usage.'
+            },
+            {
+              title: 'CatBoost',
+              slug: 'catboost',
+              excerpt: 'Discover CatBoost, Yandex\'s gradient boosting library that excels at handling categorical features without preprocessing.'
+            },
+            {
+              title: 'MLxtend',
+              slug: 'mlxtend',
+              excerpt: 'Introduction to MLxtend, a library of useful tools and extensions for everyday machine learning tasks and model evaluation.'
             }
           ]
         },
         {
-          name: 'Libraries',
-          slug: 'libraries',
+          name: 'Deep Learning Libraries',
+          slug: 'deep-learning-libraries',
+          posts: [
+            {
+              title: 'TensorFlow',
+              slug: 'tensorflow',
+              excerpt: 'A complete guide to TensorFlow, Google\'s open-source platform for building and deploying machine learning models at scale.'
+            },
+            {
+              title: 'Keras',
+              slug: 'keras',
+              excerpt: 'Learn Keras, the high-level neural networks API that makes deep learning accessible and easy to implement.'
+            },
+            {
+              title: 'PyTorch',
+              slug: 'torch',
+              excerpt: 'Explore PyTorch, Facebook\'s dynamic deep learning framework favored by researchers for its flexibility and ease of use.'
+            },
+            {
+              title: 'ONNX',
+              slug: 'onnx',
+              excerpt: 'Understanding ONNX, the open standard for representing machine learning models and enabling interoperability between frameworks.'
+            }
+          ]
+        },
+        {
+          name: 'Data Manipulation & Computation Libraries',
+          slug: 'data-manipulation-computation-libraries',
           posts: [
             {
               title: 'NumPy',
               slug: 'numpy',
-              excerpt: 'Introduction to NumPy for numerical computing in Python.'
+              excerpt: 'Master NumPy, the fundamental package for scientific computing in Python, providing powerful N-dimensional array operations.'
+            },
+            {
+              title: 'Pandas',
+              slug: 'pandas',
+              excerpt: 'Learn Pandas, the essential library for data manipulation and analysis, offering data structures and operations for numerical tables.'
+            },
+            {
+              title: 'SciPy',
+              slug: 'scipy',
+              excerpt: 'Discover SciPy, the library that builds on NumPy to provide algorithms for optimization, linear algebra, and scientific computing.'
+            },
+            {
+              title: 'Polars',
+              slug: 'polars',
+              excerpt: 'Introduction to Polars, the lightning-fast DataFrame library that offers better performance than Pandas for large datasets.'
             }
           ]
         }

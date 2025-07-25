@@ -7,7 +7,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy": "npm run build && node create-cname.js && git add . && git commit -m init && git push --force"
   },
   "private": true,
   "dependencies": {

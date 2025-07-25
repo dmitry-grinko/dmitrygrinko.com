@@ -27,6 +27,21 @@ export class BlogService {
               title: 'Vectors',
               slug: 'vectors',
               excerpt: 'A comprehensive guide to vectors in linear algebra, including their definitions, operations, geometrical interpretations and applications in machine learning.'
+            },
+            {
+              title: 'Matrices and Matrix Operations',
+              slug: 'matrices-operations',
+              excerpt: 'Master matrices and matrix operations - the powerhouse data structures that drive machine learning computations, from neural networks to data transformations.'
+            },
+            {
+              title: 'Eigenvalues and Eigenvectors',
+              slug: 'eigenvalues-eigenvectors',
+              excerpt: 'Discover eigenvalues and eigenvectors, the mathematical foundation behind PCA, PageRank, neural network stability analysis, and many other ML applications.'
+            },
+            {
+              title: 'Linear Transformations',
+              slug: 'linear-transformations',
+              excerpt: 'Understand how matrices transform space through linear transformations - the geometric foundation of neural networks, computer vision, and feature engineering.'
             }
           ]
         },
@@ -38,18 +53,75 @@ export class BlogService {
               title: 'Introduction to Derivatives',
               slug: 'introduction-to-derivatives',
               excerpt: 'Learn the fundamental concepts of derivatives in calculus, including limits, rates of change, and basic differentiation rules.'
+            },
+            {
+              title: 'Partial Derivatives and Gradients',
+              slug: 'partial-derivatives-gradients',
+              excerpt: 'Understand partial derivatives and gradients - essential concepts for multivariable calculus and the mathematical foundation of machine learning optimization.'
+            },
+            {
+              title: 'Chain Rule in Machine Learning',
+              slug: 'chain-rule-ml',
+              excerpt: 'Deep dive into the chain rule and its crucial role in backpropagation, the algorithm that makes neural network training possible.'
+            },
+            {
+              title: 'Optimization and Critical Points',
+              slug: 'optimization-critical-points',
+              excerpt: 'Explore optimization theory, critical points, and gradient-based algorithms that power modern machine learning model training.'
             }
           ]
         },
         {
           name: 'Probability Theory',
           slug: 'probability-theory',
-          posts: []
+          posts: [
+            {
+              title: 'Basic Probability Concepts',
+              slug: 'basic-probability-concepts',
+              excerpt: 'Master the fundamental concepts of probability theory - the mathematical language of uncertainty that underlies all machine learning algorithms.'
+            },
+            {
+              title: 'Bayes\' Theorem and Applications',
+              slug: 'bayes-theorem-applications',
+              excerpt: 'Discover Bayes\' theorem, the mathematical heart of machine learning, and its powerful applications in spam detection, medical diagnosis, and AI systems.'
+            },
+            {
+              title: 'Probability Distributions',
+              slug: 'probability-distributions',
+              excerpt: 'Explore discrete and continuous probability distributions that model real-world phenomena and power statistical methods in machine learning.'
+            },
+            {
+              title: 'Central Limit Theorem',
+              slug: 'central-limit-theorem',
+              excerpt: 'Understand the Central Limit Theorem - the mathematical principle that explains why normal distributions appear everywhere and enables statistical inference.'
+            }
+          ]
         },
         {
           name: 'Statistics',
           slug: 'statistics',
-          posts: []
+          posts: [
+            {
+              title: 'Descriptive Statistics',
+              slug: 'descriptive-statistics',
+              excerpt: 'Master the fundamental tools for summarizing and describing data - the essential first step in any machine learning project and data analysis.'
+            },
+            {
+              title: 'Hypothesis Testing',
+              slug: 'hypothesis-testing',
+              excerpt: 'Learn the statistical framework for making data-driven decisions, validating model improvements, and conducting rigorous A/B testing in machine learning.'
+            },
+            {
+              title: 'Correlation vs. Causation',
+              slug: 'correlation-causation',
+              excerpt: 'Understand the crucial distinction between correlation and causation - a fundamental concept for avoiding misleading conclusions in data science and ML.'
+            },
+            {
+              title: 'Statistical Inference',
+              slug: 'statistical-inference',
+              excerpt: 'Explore confidence intervals, hypothesis testing, and statistical power - the mathematical tools that enable us to draw reliable conclusions from data.'
+            }
+          ]
         }
       ]
     },

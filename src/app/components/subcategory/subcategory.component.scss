@@ -1,0 +1,164 @@
+.header {
+  padding-bottom: 1rem;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.breadcrumb-link {
+  background: #f6f8fa;
+  color: #656d76;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: all 0.15s ease;
+
+  &:hover {
+    background: #eaeef2;
+    color: #424a53;
+    text-decoration: none;
+  }
+
+  &:visited,
+  &:active,
+  &:focus {
+    color: #656d76;
+    text-decoration: none;
+  }
+}
+
+.breadcrumb-item {
+  background: #f6f8fa;
+  color: #656d76;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.breadcrumb-separator {
+  color: #656d76;
+  font-weight: 500;
+  margin: 0 4px;
+}
+
+.posts-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.post-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+
+  &.focused .post-card {
+    background: #f6f8fa;
+  }
+}
+
+.post-card {
+  background: #ffffff;
+  border: 1px solid #d1d9e0;
+  border-radius: 6px;
+  padding: 16px;
+  transition: all 0.15s ease;
+  cursor: pointer;
+
+  &:hover {
+    background: #f6f8fa;
+  }
+
+  h2 {
+    margin: 0 0 1rem 0;
+    font-size: 1.3rem;
+    line-height: 1.4;
+
+    a {
+      color: #1a1a1a;
+      text-decoration: none;
+
+      &:hover {
+        color: #1976d2;
+      }
+    }
+  }
+}
+
+.post-meta {
+  margin-bottom: 8px;
+}
+
+.subcategory-label {
+  background: #f6f8fa;
+  color: #656d76;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.excerpt {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.read-more {
+  color: #1976d2;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.no-posts {
+  text-align: center;
+  margin-top: 3rem;
+  color: #666;
+
+  h2 {
+    margin-bottom: 1rem;
+    color: #999;
+  }
+
+  p {
+    margin-bottom: 2rem;
+  }
+}
+
+.back-link {
+  color: #1976d2;
+  text-decoration: none;
+  font-weight: 500;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .post-card {
+    padding: 1rem;
+
+    h2 {
+      font-size: 1.1rem;
+    }
+  }
+} 

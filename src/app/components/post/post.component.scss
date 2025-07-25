@@ -1,0 +1,167 @@
+.header {
+}
+
+.post-header {
+  padding-bottom: 24px;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.breadcrumb-link {
+  background: #f6f8fa;
+  color: #656d76;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: all 0.15s ease;
+
+  &:hover {
+    background: #eaeef2;
+    color: #424a53;
+    text-decoration: none;
+  }
+
+  &:visited,
+  &:active,
+  &:focus {
+    color: #656d76;
+    text-decoration: none;
+  }
+}
+
+.breadcrumb-separator {
+  color: #656d76;
+  font-weight: 500;
+  margin: 0 4px;
+}
+
+.date {
+  color: #656d76;
+}
+
+.post-header h1 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f2328;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.post-content {
+  line-height: 1.7;
+}
+
+.content {
+  color: #444;
+
+  :global(h1),
+  :global(h2),
+  :global(h3),
+  :global(h4),
+  :global(h5),
+  :global(h6) {
+    color: #444;
+    margin: 2rem 0 1rem 0;
+    font-weight: 600;
+  }
+
+  :global(h1) { font-size: 2rem; }
+  :global(h2) { font-size: 1.6rem; }
+  :global(h3) { font-size: 1.3rem; }
+
+  :global(p) {
+    margin: 1rem 0;
+  }
+
+  :global(ul),
+  :global(ol) {
+    margin: 1rem 0;
+    padding-left: 2rem;
+  }
+
+  :global(li) {
+    margin: 0.5rem 0;
+  }
+
+  // Code styling is now handled globally by highlight.js
+
+  :global(blockquote) {
+    border-left: 4px solid #1976d2;
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    background: #f8f9fa;
+    font-style: italic;
+  }
+
+  :global(strong) {
+    font-weight: 600;
+  }
+
+  :global(a) {
+    color: #444;
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:visited,
+    &:active {
+      color: #444;
+    }
+  }
+}
+
+.not-found,
+.loading {
+  text-align: center;
+  margin-top: 3rem;
+  color: #444;
+}
+
+.not-found {
+  h2 {
+    color: #444;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: #444;
+    margin-bottom: 2rem;
+  }
+}
+
+.home-link {
+  color: #444;
+  text-decoration: none;
+  font-weight: 500;
+
+  &:hover,
+  &:focus,
+  &:visited,
+  &:active {
+    color: #444;
+  }
+}
+
+.loading {
+  color: #444;
+}
+
+@media (max-width: 768px) {
+  .post-header h1 {
+    font-size: 2rem;
+  }
+
+  .content {
+    :global(h1) { font-size: 1.6rem; }
+    :global(h2) { font-size: 1.4rem; }
+    :global(h3) { font-size: 1.2rem; }
+  }
+} 

@@ -1,0 +1,31 @@
+<div *ngIf="searchQuery" class="search-info">
+  <h2>Search Results for "{{ searchQuery }}"</h2>
+  <p *ngIf="posts.length === 0">No posts found matching your search.</p>
+  <p *ngIf="posts.length > 0">Found {{ posts.length }} post(s)</p>
+</div>
+
+<main class="posts-grid">
+  <a *ngFor="let post of posts; let i = index" 
+     [routerLink]="['/post', post.slug]" 
+     class="post-card-link"
+     [attr.data-post-index]="i"
+     [class.focused]="isPostFocused(i)">
+    <article class="post-card">
+      <div class="post-meta">
+        <a *ngIf="post.subcategory" 
+           [routerLink]="['/subcategory', getCategorySlug(post.category), getSubcategorySlug(post.subcategory)]" 
+           class="subcategory-label clickable"
+           (click)="$event.stopPropagation()">
+          {{ post.subcategory | titlecase }}
+        </a>
+      </div>
+      <h2>{{ post.title }}</h2>
+      <p class="excerpt">{{ post.excerpt }}</p>
+    </article>
+  </a>
+</main>
+
+<div *ngIf="posts.length === 0 && !searchQuery" class="no-posts">
+  <h2>No Posts Yet</h2>
+  <p>Check back soon for new content!</p>
+</div> 

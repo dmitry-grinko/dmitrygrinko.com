@@ -1,0 +1,30 @@
+<header class="header">
+  <div class="breadcrumbs">
+    <span class="breadcrumb-item">{{ getCategoryDisplayName() | titlecase }}</span>
+  </div>
+</header>
+
+<main class="posts-grid">
+  <a *ngFor="let post of posts; let i = index" 
+     [routerLink]="['/post', post.slug]" 
+     class="post-card-link"
+     [attr.data-post-index]="i"
+     [class.focused]="isPostFocused(i)">
+    <article class="post-card">
+      <div class="post-meta">
+        <a *ngIf="post.subcategory" 
+           [routerLink]="['/subcategory', categorySlug, getSubcategorySlug(post.subcategory)]" 
+           class="subcategory-label clickable"
+           (click)="$event.stopPropagation()">
+          {{ post.subcategory | titlecase }}
+        </a>
+      </div>
+      <h2>{{ post.title }}</h2>
+      <p class="excerpt">{{ post.excerpt }}</p>
+    </article>
+  </a>
+</main>
+
+<div *ngIf="posts.length === 0" class="no-posts">
+  <p>No posts found in this category.</p>
+</div> 

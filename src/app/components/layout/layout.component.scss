@@ -1,0 +1,28 @@
+.layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Mobile Layout */
+@media (max-width: 768px) {
+  .layout {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .layout {
+    padding: 8px;
+  }
+} 

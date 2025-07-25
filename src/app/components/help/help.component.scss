@@ -1,0 +1,163 @@
+.help-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.help-header {
+  text-align: center;
+  margin-bottom: 48px;
+  
+  h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #1f2328;
+    margin: 0 0 16px 0;
+    line-height: 1.25;
+  }
+  
+  p {
+    font-size: 16px;
+    color: #656d76;
+    margin: 0;
+    line-height: 1.5;
+  }
+}
+
+.help-content {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.shortcut-section {
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1f2328;
+    margin: 0 0 12px 0;
+    line-height: 1.25;
+  }
+  
+  > p {
+    font-size: 14px;
+    color: #656d76;
+    margin: 0 0 24px 0;
+    line-height: 1.5;
+  }
+}
+
+.shortcuts-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.shortcut-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 16px;
+  background: #ffffff;
+  border: 1px solid #d1d9e0;
+  border-radius: 8px;
+  transition: all 0.15s ease;
+  
+  &:hover {
+    background: #f6f8fa;
+    border-color: #c4c9cf;
+  }
+}
+
+.shortcut-key {
+  min-width: 140px;
+  font-family: monospace;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2328;
+  
+  kbd {
+    background: #f6f8fa;
+    border: 1px solid #d1d9e0;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: 600;
+    color: #1f2328;
+    box-shadow: 0 1px 2px rgba(31, 35, 40, 0.1);
+    margin: 0 2px;
+  }
+}
+
+.shortcut-description {
+  flex: 1;
+  
+  strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1f2328;
+    margin-bottom: 4px;
+    line-height: 1.25;
+  }
+  
+  span {
+    font-size: 13px;
+    color: #656d76;
+    line-height: 1.4;
+  }
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .help-container {
+    padding: 16px 12px;
+  }
+  
+  .help-header {
+    margin-bottom: 32px;
+    
+    h1 {
+      font-size: 24px;
+    }
+    
+    p {
+      font-size: 14px;
+    }
+  }
+  
+  .help-content {
+    gap: 32px;
+  }
+  
+  .shortcut-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .shortcut-key {
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .shortcut-section h2 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .help-container {
+    padding: 12px 8px;
+  }
+  
+  .help-header h1 {
+    font-size: 20px;
+  }
+  
+  .shortcut-item {
+    padding: 12px;
+  }
+} 

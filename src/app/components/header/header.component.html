@@ -1,0 +1,120 @@
+<header class="header" [class.search-expanded]="isSearchExpanded">
+  <div class="container">
+    <!-- Logo -->
+    <div class="logo">
+      <a routerLink="/" class="logo-link">
+        <span class="logo-text">The Developer's Blog</span>
+      </a>
+    </div>
+
+    <!-- Right side navigation -->
+    <div class="nav-right">
+      <!-- Blog Dropdown -->
+      <div class="categories-dropdown">
+        <button 
+          class="categories-btn"
+          (click)="toggleCategoriesDropdown()"
+          type="button"
+        >
+          Blog
+          <span class="dropdown-arrow" [class.open]="isCategoriesOpen">▼</span>
+        </button>
+      
+      <div class="categories-menu" [class.open]="isCategoriesOpen">
+        <div *ngFor="let category of getCategoriesWithSubcategories()" class="category-group">
+          <div class="category-header">
+            <button 
+              class="category-toggle"
+              (click)="toggleCategory(category.name)"
+              type="button"
+            >
+              <span class="category-arrow" [class.open]="isCategoryExpanded(category.name)">▶</span>
+              <span class="category-name">{{ category.name | titlecase }}</span>
+              <span class="category-count">({{ category.count }})</span>
+            </button>
+          </div>
+          <div class="subcategories-list" [class.expanded]="isCategoryExpanded(category.name)">
+            <a *ngFor="let subcategory of category.subcategories"
+               [routerLink]="['/subcategory', category.slug, subcategory.slug]"
+               class="subcategory-item"
+               (click)="closeCategoriesDropdown()">
+              {{ subcategory.name | titlecase }} ({{ subcategory.count }})
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <!-- Help Link -->
+      <a routerLink="/help" class="help-link" title="Help & Shortcuts">
+        Help
+      </a>
+
+      <!-- Search -->
+      <div class="search-container">
+        <button 
+          class="search-icon-btn"
+          [class.hidden]="isSearchExpanded"
+          (click)="expandSearch()"
+          type="button"
+          aria-label="Open search (Ctrl+S)"
+          title="Search (Ctrl+S)"
+        >
+          🔍
+        </button>
+        <input 
+          #searchInput
+          type="search"
+          class="search-input"
+          [class.expanded]="isSearchExpanded"
+          placeholder="Search posts..."
+          [(ngModel)]="searchQuery"
+          (input)="onSearch()"
+          (keyup.enter)="performSearch()"
+          (blur)="onSearchBlur()"
+          autocomplete="off"
+          role="searchbox"
+          aria-label="Search blog posts"
+        >
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Search Overlay -->
+  <div 
+    class="search-overlay" 
+    [class.visible]="searchResults.length > 0 && searchQuery.length > 0"
+    (click)="clearSearch()"
+  ></div>
+
+  <!-- Search Results Dropdown -->
+  <div 
+    class="search-results" 
+    [class.visible]="searchResults.length > 0 && searchQuery.length > 0"
+  >
+    <div class="search-results-container">
+      <div class="search-results-header">
+        <span>Search Results ({{ searchResults.length }})</span>
+        <span 
+          class="close-search"
+          (click)="clearSearch()"
+          aria-label="Clear search"
+        >×</span>
+      </div>
+      <div class="search-results-list">
+        <a 
+          *ngFor="let post of searchResults; let i = index" 
+          [routerLink]="['/post', post.slug]"
+          class="search-result-item"
+          [attr.data-search-index]="i"
+          [class.focused]="isSearchResultFocused(i)"
+          (click)="clearSearch()"
+        >
+          <h4>{{ post.title }}</h4>
+          <p>{{ post.excerpt }}</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</header> 

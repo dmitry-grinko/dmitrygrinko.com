@@ -1,0 +1,30 @@
+<header class="header">
+  <div *ngIf="post" class="post-header">
+    <div class="breadcrumbs">
+      <a [routerLink]="['/category', getCategorySlug()]" class="breadcrumb-link">
+        {{ post.category | titlecase }}
+      </a>
+      <span class="breadcrumb-separator">></span>
+      <a [routerLink]="['/subcategory', getCategorySlug(), getSubcategorySlug()]" class="breadcrumb-link">
+        {{ post.subcategory | titlecase }}
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="post-content">
+  <div *ngIf="post && post.content" 
+       class="content" 
+       [innerHTML]="post.content">
+  </div>
+  
+  <div *ngIf="!post && !loading" class="not-found">
+    <h2>Post Not Found</h2>
+    <p>The post you're looking for doesn't exist or has been moved.</p>
+    <a routerLink="/" class="home-link">Go back to home</a>
+  </div>
+
+  <div *ngIf="loading" class="loading">
+    <p>Loading post...</p>
+  </div>
+</main> 

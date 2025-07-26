@@ -173,7 +173,31 @@ plt.show()
 
 ![Vector visualization example](https://raw.githubusercontent.com/dmitry-grinko/dmitrygrinko.com/refs/heads/main/src/data/images/vector.png)
 
-The image above shows vectors plotted in 2D space, demonstrating how mathematical concepts translate to visual representations that make vector operations intuitive and easy to understand.
+### Vector Transformation Example
+
+Here's a more advanced example showing how matrices can transform (rotate and scale) vectors:
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+v = np.array([[1], [0]])
+A = np.array([[1, 2], [3, 1]])
+v_rotated = A @ v
+
+plt.quiver(0, 0, v[0], v[1], angles='xy', scale_units='xy', scale=1, color='blue', label='original')
+plt.quiver(0, 0, v_rotated[0], v_rotated[1], angles='xy', scale_units='xy', scale=1, color='red', label='rotated')
+
+plt.xlim(-2, 4)
+plt.ylim(-2, 4)
+plt.gca().set_aspect('equal')
+plt.grid()
+plt.show()
+```
+
+![Vector transformation example](https://raw.githubusercontent.com/dmitry-grinko/dmitrygrinko.com/refs/heads/main/src/data/images/vector_rotated.png)
+
+This example demonstrates how matrix multiplication transforms vectors - a fundamental concept in linear algebra that powers many machine learning operations like feature transformations, neural network layers, and dimensionality reduction techniques.
 
 ## 10. Conclusion
 

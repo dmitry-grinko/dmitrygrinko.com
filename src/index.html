@@ -25,6 +25,13 @@
   
   <!-- Preload key fonts for better performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <script>
+    if (sessionStorage.redirect) {
+      const redirect = sessionStorage.redirect;
+      sessionStorage.removeItem("redirect");
+      history.replaceState(null, null, redirect);
+    }
+  </script>
 </head>
 <body>
   <app-root></app-root>

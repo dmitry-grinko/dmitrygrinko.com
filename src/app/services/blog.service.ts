@@ -267,7 +267,7 @@ export class BlogService {
       return `<pre><code class="hljs ${themeClass}">${autoDetected.value}</code></pre>`;
     };
 
-    // Configure image renderer for proper path resolution
+    // Configure image renderer for proper path resolution and click handling
     renderer.image = function({ href, title, text }: { href: string; title: string | null; text: string }): string {
       // If the image path doesn't start with http/https, treat it as a local image
       if (!href.startsWith('http://') && !href.startsWith('https://')) {
@@ -278,7 +278,7 @@ export class BlogService {
       const titleAttr = title ? ` title="${title}"` : '';
       const altAttr = text ? ` alt="${text}"` : '';
       
-      return `<img src="${href}"${altAttr}${titleAttr} class="post-image">`;
+      return `<img src="${href}"${altAttr}${titleAttr} class="post-image clickable-image">`;
     };
 
     marked.setOptions({ renderer });

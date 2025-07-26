@@ -96,7 +96,18 @@
     margin: 0.5rem 0;
   }
 
-  // Code styling is now handled globally by highlight.js
+  :global(.clickable-image) {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem auto;
+
+    &:hover {
+      transform: scale(1.01);
+    }
+  }
 
   :global(blockquote) {
     border-left: 4px solid var(--color-text-accent);

@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -23,6 +23,13 @@ import { CommonModule } from '@angular/common';
       justify-content: center;
       z-index: 9999;
       cursor: pointer;
+      overflow: hidden;
+      animation: fadeIn 0.2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     img {
@@ -30,10 +37,24 @@ import { CommonModule } from '@angular/common';
       max-height: 90vh;
       object-fit: contain;
       cursor: default;
+      animation: scaleIn 0.2s ease;
+    }
+
+    @keyframes scaleIn {
+      from { transform: scale(0.95); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
     }
   `]
 })
-export class ImageViewerComponent {
+export class ImageViewerComponent implements OnInit, OnDestroy {
   @Input() imageUrl: string = '';
   @Output() close = new EventEmitter<void>();
+
+  ngOnInit() {
+    document.body.style.overflow = 'hidden';
+  }
+
+  ngOnDestroy() {
+    document.body.style.overflow = '';
+  }
 } 

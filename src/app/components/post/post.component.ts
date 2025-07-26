@@ -12,7 +12,7 @@ import { ImageViewerComponent } from '../image-viewer/image-viewer.component';
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss']
 })
-export class PostComponent implements OnInit, AfterViewInit {
+export class PostComponent implements OnInit {
   post: Post | null = null;
   loading: boolean = true;
   showImageViewer: boolean = false;
@@ -31,10 +31,6 @@ export class PostComponent implements OnInit, AfterViewInit {
     });
   }
 
-  ngAfterViewInit() {
-    this.setupImageClickHandlers();
-  }
-
   private setupImageClickHandlers() {
     // Add click event listeners to all clickable images
     const images = this.elementRef.nativeElement.querySelectorAll('.clickable-image');
@@ -48,11 +44,19 @@ export class PostComponent implements OnInit, AfterViewInit {
 
   private loadPost(slug: string) {
     this.loading = true;
-    this.blogService.getPost(slug).subscribe(post => {
-      this.post = post;
-      this.loading = false;
-      // Setup image click handlers after content is loaded
-      setTimeout(() => this.setupImageClickHandlers(), 0);
+    this.blogService.getPost(slug).subscribe({
+      next: (post) => {
+        this.post = post;
+        this.loading = false;
+        // Setup image click handlers after content is loaded and rendered
+        setTimeout(() => {
+          this.setupImageClickHandlers();
+        }, 0);
+      },
+      error: () => {
+        this.post = null;
+        this.loading = false;
+      }
     });
   }
 

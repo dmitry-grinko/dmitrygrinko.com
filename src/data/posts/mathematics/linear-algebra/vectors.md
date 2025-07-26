@@ -140,7 +140,55 @@ Used in recommender systems and NLP.
 
 Used in different regularization techniques (L1 = Lasso, L2 = Ridge).
 
-## 9. Conclusion
+## 9. Visualizing Vectors with Python
+
+Understanding vectors becomes much clearer when we can visualize them. Python provides excellent tools for creating vector plots that help illustrate concepts like direction, magnitude, and operations.
+
+Here's how to create vector visualizations using matplotlib:
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Create a figure
+fig, ax = plt.subplots(1, 1, figsize=(8, 6))
+
+# Define some vectors
+v1 = np.array([3, 4])
+v2 = np.array([2, -1])
+v3 = v1 + v2  # Vector addition
+
+# Plot vectors starting from origin
+ax.quiver(0, 0, v1[0], v1[1], angles='xy', scale_units='xy', scale=1, 
+          color='blue', width=0.005, label='v1 = [3, 4]')
+ax.quiver(0, 0, v2[0], v2[1], angles='xy', scale_units='xy', scale=1, 
+          color='red', width=0.005, label='v2 = [2, -1]')
+ax.quiver(0, 0, v3[0], v3[1], angles='xy', scale_units='xy', scale=1, 
+          color='green', width=0.005, label='v1 + v2 = [5, 3]')
+
+# Set equal aspect ratio and grid
+ax.set_xlim(-1, 6)
+ax.set_ylim(-2, 5)
+ax.set_aspect('equal')
+ax.grid(True, alpha=0.3)
+ax.legend()
+ax.set_title('Vector Visualization Example')
+ax.set_xlabel('X axis')
+ax.set_ylabel('Y axis')
+
+plt.show()
+```
+
+This type of visualization helps you understand:
+- **Vector direction**: The arrow shows where the vector points
+- **Vector magnitude**: The length of the arrow represents the vector's magnitude
+- **Vector operations**: You can visually see results of addition, subtraction, and scaling
+
+![Vector visualization example](https://raw.githubusercontent.com/dmitry-grinko/dmitrygrinko.com/refs/heads/main/src/data/images/vector.png)
+
+The image above shows vectors plotted in 2D space, demonstrating how mathematical concepts translate to visual representations that make vector operations intuitive and easy to understand.
+
+## 10. Conclusion
 
 Vectors are everywhere in machine learning—from the data itself to the weights, gradients, and even model embeddings. A strong grasp of vector operations and their geometry is essential for building and understanding ML models.
 

@@ -8,7 +8,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "npm run build && node create-cname.js && git add . && git commit -m init && git push --force"
+    "deploy": "npm run build && cp CNAME docs/ && cp 404.html docs/ && git add . && git commit -m init && git push --force"
   },
   "private": true,
   "dependencies": {

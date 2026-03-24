@@ -280,9 +280,9 @@ def pagerank_eigenvector(adjacency_matrix, damping=0.85, max_iter=100):
     """
     n = adjacency_matrix.shape[0]
     
-    # Create transition matrix
+    # Create transition matrix (column-stochastic: columns sum to 1)
     # Add damping for numerical stability
-    transition_matrix = damping * adjacency_matrix / adjacency_matrix.sum(axis=1, keepdims=True)
+    transition_matrix = damping * adjacency_matrix / adjacency_matrix.sum(axis=0, keepdims=True)
     transition_matrix += (1 - damping) / n * np.ones((n, n))
     
     # Power iteration to find dominant eigenvector

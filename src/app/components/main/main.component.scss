@@ -25,6 +25,17 @@
     text-align: center;
     transition: var(--theme-transition);
   }
+
+  .section-heading {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-top: 28px;
+    margin-bottom: 12px;
+    line-height: 1.35;
+    text-align: left;
+    transition: var(--theme-transition);
+  }
 }
 
 .intro-content {
@@ -42,6 +53,23 @@
     color: var(--color-text-primary);
     font-weight: 600;
     transition: var(--theme-transition);
+  }
+}
+
+.content-list {
+  margin: 0 0 16px 0;
+  padding-left: 1.25rem;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  transition: var(--theme-transition);
+
+  li {
+    margin-bottom: 8px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 

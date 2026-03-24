@@ -183,10 +183,10 @@ import matplotlib.pyplot as plt
 
 v = np.array([[1], [0]])
 A = np.array([[1, 2], [3, 1]])
-v_rotated = A @ v
+v_transformed = A @ v
 
 plt.quiver(0, 0, v[0], v[1], angles='xy', scale_units='xy', scale=1, color='blue', label='original')
-plt.quiver(0, 0, v_rotated[0], v_rotated[1], angles='xy', scale_units='xy', scale=1, color='red', label='rotated')
+plt.quiver(0, 0, v_transformed[0], v_transformed[1], angles='xy', scale_units='xy', scale=1, color='red', label='transformed')
 
 plt.xlim(-2, 4)
 plt.ylim(-2, 4)

@@ -105,7 +105,7 @@ def medical_diagnosis_bayes():
     print(f"Test specificity: {test_specificity:.1%}")
     print(f"P(positive test) = {p_positive:.3f}")
     print(f"P(disease | positive test) = {p_disease_given_positive:.1%}")
-    print(f"\nCounterinterior: Even with 99% accurate test,")
+    print(f"\nCounterintuitive: Even with 99% accurate test,")
     print(f"positive result only means {p_disease_given_positive:.1%} chance of disease!")
     
     return p_disease_given_positive

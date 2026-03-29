@@ -2,11 +2,11 @@
   <div *ngIf="post" class="post-header">
     <div class="breadcrumbs">
       <a [routerLink]="['/category', getCategorySlug()]" class="breadcrumb-link">
-        {{ post.category | titlecase }}
+        {{ post.category }}
       </a>
       <span class="breadcrumb-separator">></span>
       <a [routerLink]="['/subcategory', getCategorySlug(), getSubcategorySlug()]" class="breadcrumb-link">
-        {{ post.subcategory | titlecase }}
+        {{ post.subcategory }}
       </a>
     </div>
   </div>

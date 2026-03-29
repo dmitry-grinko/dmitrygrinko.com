@@ -13,10 +13,10 @@
     <article class="post-card">
       <div class="post-meta">
         <a *ngIf="post.subcategory" 
-           [routerLink]="['/subcategory', getCategorySlug(post.category), getSubcategorySlug(post.subcategory)]" 
+           [routerLink]="['/subcategory', getCategorySlug(post.category, post.categorySlug), getSubcategorySlug(post.subcategory, post.subcategorySlug)]" 
            class="subcategory-label clickable"
            (click)="$event.stopPropagation()">
-          {{ post.subcategory | titlecase }}
+          {{ post.subcategory }}
         </a>
       </div>
       <h2>{{ post.title }}</h2>

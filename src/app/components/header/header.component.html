@@ -3,7 +3,7 @@
     <!-- Logo -->
     <div class="logo">
       <a routerLink="/" class="logo-link">
-        <span class="logo-text">Biology for Engineers</span>
+        <span class="logo-text">ML Systems Notes</span>
       </a>
     </div>
 
@@ -29,7 +29,7 @@
               type="button"
             >
               <span class="category-arrow" [class.open]="isCategoryExpanded(category.name)">▶</span>
-              <span class="category-name">{{ category.name | titlecase }}</span>
+              <span class="category-name">{{ category.name }}</span>
               <span class="category-count">({{ category.count }})</span>
             </button>
           </div>
@@ -38,7 +38,7 @@
                [routerLink]="['/subcategory', category.slug, subcategory.slug]"
                class="subcategory-item"
                (click)="closeCategoriesDropdown()">
-              {{ subcategory.name | titlecase }} ({{ subcategory.count }})
+              {{ subcategory.name }} ({{ subcategory.count }})
             </a>
           </div>
         </div>

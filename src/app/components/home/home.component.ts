@@ -58,23 +58,28 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  getCategorySlug(categoryName?: string): string {
+  getCategorySlug(categoryName?: string, categorySlug?: string): string {
+    if (categorySlug) {
+      return categorySlug;
+    }
     if (!categoryName) return '';
     
-    // Convert category name back to slug
     const name = categoryName.toLowerCase();
     switch (name) {
       case 'mathematics': return 'mathematics';
       case 'python': return 'python';
       case 'machine learning algorithms': return 'machine-learning-algorithms';
+      case 'stage 0 — machine learning fundamentals': return 'stage-0-machine-learning-fundamentals';
       default: return name.replace(/\s+/g, '-');
     }
   }
 
-  getSubcategorySlug(subcategoryName?: string): string {
+  getSubcategorySlug(subcategoryName?: string, subcategorySlug?: string): string {
+    if (subcategorySlug) {
+      return subcategorySlug;
+    }
     if (!subcategoryName) return '';
     
-    // Convert subcategory name back to slug
     return subcategoryName.toLowerCase().replace(/\s+/g, '-');
   }
 

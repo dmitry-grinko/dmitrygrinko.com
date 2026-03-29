@@ -61,22 +61,27 @@ export class PostComponent implements OnInit {
   }
 
   getCategorySlug(): string {
+    if (this.post?.categorySlug) {
+      return this.post.categorySlug;
+    }
     if (!this.post?.category) return '';
     
-    // Convert category name back to slug
     const categoryName = this.post.category.toLowerCase();
     switch (categoryName) {
       case 'mathematics': return 'mathematics';
       case 'python': return 'python';
       case 'machine learning algorithms': return 'machine-learning-algorithms';
+      case 'stage 0 — machine learning fundamentals': return 'stage-0-machine-learning-fundamentals';
       default: return categoryName.replace(/\s+/g, '-');
     }
   }
 
   getSubcategorySlug(): string {
+    if (this.post?.subcategorySlug) {
+      return this.post.subcategorySlug;
+    }
     if (!this.post?.subcategory) return '';
     
-    // Convert subcategory name back to slug
     return this.post.subcategory.toLowerCase().replace(/\s+/g, '-');
   }
 

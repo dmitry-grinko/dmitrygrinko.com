@@ -1,6 +1,6 @@
 <header class="header">
   <div class="breadcrumbs">
-    <span class="breadcrumb-item">{{ getCategoryDisplayName() | titlecase }}</span>
+    <span class="breadcrumb-item">{{ getCategoryDisplayName() }}</span>
   </div>
 </header>
 
@@ -13,10 +13,10 @@
     <article class="post-card">
       <div class="post-meta">
         <a *ngIf="post.subcategory" 
-           [routerLink]="['/subcategory', categorySlug, getSubcategorySlug(post.subcategory)]" 
+           [routerLink]="['/subcategory', categorySlug, getSubcategorySlug(post.subcategory, post.subcategorySlug)]" 
            class="subcategory-label clickable"
            (click)="$event.stopPropagation()">
-          {{ post.subcategory | titlecase }}
+          {{ post.subcategory }}
         </a>
       </div>
       <h2>{{ post.title }}</h2>

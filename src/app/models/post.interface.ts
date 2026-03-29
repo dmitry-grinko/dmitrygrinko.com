@@ -2,6 +2,9 @@ export interface Post {
   title: string;
   category: string;
   subcategory?: string;
+  /** Canonical URL segment; set when category display name is not trivially slugified */
+  categorySlug?: string;
+  subcategorySlug?: string;
   date?: string;
   slug: string;
   excerpt: string;
@@ -14,6 +17,8 @@ export interface PostMetadata {
   excerpt: string;
   category?: string;
   subcategory?: string;
+  categorySlug?: string;
+  subcategorySlug?: string;
 }
 
 export interface CategoryTree {

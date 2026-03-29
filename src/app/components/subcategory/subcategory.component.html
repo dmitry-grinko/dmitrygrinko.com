@@ -1,10 +1,10 @@
 <header class="header">
   <div class="breadcrumbs">
     <a [routerLink]="['/category', categorySlug]" class="breadcrumb-link">
-      {{ getCategoryDisplayName() | titlecase }}
+      {{ getCategoryDisplayName() }}
     </a>
     <span class="breadcrumb-separator">></span>
-    <span class="breadcrumb-item">{{ getSubcategoryDisplayName() | titlecase }}</span>
+    <span class="breadcrumb-item">{{ getSubcategoryDisplayName() }}</span>
   </div>
 </header>
 
@@ -16,7 +16,7 @@
      [class.focused]="isPostFocused(i)">
     <article class="post-card">
       <div class="post-meta">
-        <span class="subcategory-label" *ngIf="post.subcategory">{{ post.subcategory | titlecase }}</span>
+        <span class="subcategory-label" *ngIf="post.subcategory">{{ post.subcategory }}</span>
       </div>
       <h2>{{ post.title }}</h2>
       <p class="excerpt">{{ post.excerpt }}</p>

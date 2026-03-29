@@ -63,10 +63,12 @@ export class CategoryComponent implements OnInit {
     return this.categoryDisplayName;
   }
 
-  getSubcategorySlug(subcategoryName?: string): string {
+  getSubcategorySlug(subcategoryName?: string, subcategorySlug?: string): string {
+    if (subcategorySlug) {
+      return subcategorySlug;
+    }
     if (!subcategoryName) return '';
     
-    // Convert subcategory name back to slug
     return subcategoryName.toLowerCase().replace(/\s+/g, '-');
   }
 

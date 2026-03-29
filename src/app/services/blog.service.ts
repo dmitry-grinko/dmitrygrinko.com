@@ -4540,6 +4540,45 @@ export class BlogService {
     return (ia === -1 ? 1000 : ia) - (ib === -1 ? 1000 : ib);
   }
 
+  /** Flat post list for one category (subcategories in study order, posts in definition order). */
+  private getFlattenedCategoryPosts(categorySlug: string): PostMetadata[] {
+    const categoryData = this.predefinedCategories[categorySlug];
+    if (!categoryData) {
+      return [];
+    }
+    const subOrder = this.studyOrderSubcategorySlugs[categorySlug] ?? [];
+    const subcategories = [...categoryData.subcategories].sort((a, b) =>
+      this.compareBySlugOrder(subOrder, a.slug, b.slug)
+    );
+    const posts: PostMetadata[] = [];
+    for (const subcategory of subcategories) {
+      for (const post of subcategory.posts) {
+        posts.push({
+          ...post,
+          category: categoryData.name,
+          subcategory: subcategory.name,
+          categorySlug: categoryData.slug,
+          subcategorySlug: subcategory.slug
+        });
+      }
+    }
+    return posts;
+  }
+
+  /** All posts in global nav order (stages, then subcategories, then posts). */
+  private buildAllPostsInNavOrder(): PostMetadata[] {
+    const orderedSlugs = new Set(this.studyOrderCategorySlugs);
+    const categorySlugs = [
+      ...this.studyOrderCategorySlugs,
+      ...Object.keys(this.predefinedCategories).filter(s => !orderedSlugs.has(s))
+    ];
+    const flat: PostMetadata[] = [];
+    for (const categorySlug of categorySlugs) {
+      flat.push(...this.getFlattenedCategoryPosts(categorySlug));
+    }
+    return flat;
+  }
+
   constructor(
     private http: HttpClient,
     private themeService: ThemeService
@@ -4592,36 +4631,7 @@ export class BlogService {
       return of(this.allPostsCache);
     }
 
-    const allPosts: PostMetadata[] = [];
-    const orderedSlugs = new Set(this.studyOrderCategorySlugs);
-    const categorySlugs = [
-      ...this.studyOrderCategorySlugs,
-      ...Object.keys(this.predefinedCategories).filter(s => !orderedSlugs.has(s))
-    ];
-
-    for (const categorySlug of categorySlugs) {
-      const category = this.predefinedCategories[categorySlug];
-      if (!category) {
-        continue;
-      }
-      const subOrder = this.studyOrderSubcategorySlugs[categorySlug] ?? [];
-      const subcategories = [...category.subcategories].sort((a, b) =>
-        this.compareBySlugOrder(subOrder, a.slug, b.slug)
-      );
-      for (const subcategory of subcategories) {
-        for (const post of subcategory.posts) {
-          allPosts.push({
-            ...post,
-            category: category.name,
-            subcategory: subcategory.name,
-            categorySlug: category.slug,
-            subcategorySlug: subcategory.slug
-          });
-        }
-      }
-    }
-
-    this.allPostsCache = allPosts;
+    this.allPostsCache = this.buildAllPostsInNavOrder();
     return of(this.allPostsCache);
   }
 
@@ -4629,31 +4639,24 @@ export class BlogService {
     return this.loadAllPostsMetadata();
   }
 
+  /** Previous / next article in global curriculum order (same as aggregated listing). */
+  getAdjacentPosts(slug: string): { prev: PostMetadata | null; next: PostMetadata | null } {
+    if (!this.allPostsCache) {
+      this.allPostsCache = this.buildAllPostsInNavOrder();
+    }
+    const flat = this.allPostsCache;
+    const idx = flat.findIndex(p => p.slug === slug);
+    if (idx === -1) {
+      return { prev: null, next: null };
+    }
+    return {
+      prev: idx > 0 ? flat[idx - 1] : null,
+      next: idx < flat.length - 1 ? flat[idx + 1] : null
+    };
+  }
+
   getPostsByCategory(categorySlug: string): Observable<PostMetadata[]> {
-    const categoryData = this.predefinedCategories[categorySlug];
-    if (!categoryData) {
-      return of([]);
-    }
-
-    const subOrder = this.studyOrderSubcategorySlugs[categorySlug] ?? [];
-    const subcategories = [...categoryData.subcategories].sort((a, b) =>
-      this.compareBySlugOrder(subOrder, a.slug, b.slug)
-    );
-
-    const posts: PostMetadata[] = [];
-    for (const subcategory of subcategories) {
-      for (const post of subcategory.posts) {
-        posts.push({
-          ...post,
-          category: categoryData.name,
-          subcategory: subcategory.name,
-          categorySlug: categoryData.slug,
-          subcategorySlug: subcategory.slug
-        });
-      }
-    }
-
-    return of(posts);
+    return of(this.getFlattenedCategoryPosts(categorySlug));
   }
 
   getPost(slug: string): Observable<Post | null> {

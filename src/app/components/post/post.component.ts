@@ -1,8 +1,8 @@
-import { Component, OnInit, AfterViewInit, OnDestroy, ElementRef } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy, ElementRef, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, ActivatedRoute } from '@angular/router';
+import { Router, RouterModule, ActivatedRoute } from '@angular/router';
 import { BlogService } from '../../services/blog.service';
-import { Post } from '../../models/post.interface';
+import { Post, PostMetadata } from '../../models/post.interface';
 import { ImageViewerComponent } from '../image-viewer/image-viewer.component';
 
 @Component({
@@ -14,6 +14,8 @@ import { ImageViewerComponent } from '../image-viewer/image-viewer.component';
 })
 export class PostComponent implements OnInit, AfterViewInit, OnDestroy {
   post: Post | null = null;
+  prevPost: PostMetadata | null = null;
+  nextPost: PostMetadata | null = null;
   loading: boolean = true;
   showImageViewer: boolean = false;
   selectedImageUrl: string = '';
@@ -21,8 +23,43 @@ export class PostComponent implements OnInit, AfterViewInit, OnDestroy {
   constructor(
     private blogService: BlogService,
     private route: ActivatedRoute,
+    private router: Router,
     private elementRef: ElementRef<HTMLElement>
   ) {}
+
+  @HostListener('document:keydown', ['$event'])
+  onDocumentKeydown(event: KeyboardEvent): void {
+    if (!this.post?.content || this.loading) {
+      return;
+    }
+    if (!event.ctrlKey || !event.shiftKey) {
+      return;
+    }
+    if (this.isTypingTarget(event.target)) {
+      return;
+    }
+
+    if (event.key === 'ArrowLeft') {
+      if (!this.prevPost) {
+        return;
+      }
+      event.preventDefault();
+      void this.router.navigate(['/post', this.prevPost.slug]);
+    } else if (event.key === 'ArrowRight') {
+      if (!this.nextPost) {
+        return;
+      }
+      event.preventDefault();
+      void this.router.navigate(['/post', this.nextPost.slug]);
+    }
+  }
+
+  private isTypingTarget(target: EventTarget | null): boolean {
+    if (!(target instanceof HTMLElement)) {
+      return false;
+    }
+    return !!target.closest('input, textarea, select, [contenteditable="true"]');
+  }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -57,13 +94,22 @@ export class PostComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private loadPost(slug: string) {
     this.loading = true;
+    this.prevPost = null;
+    this.nextPost = null;
     this.blogService.getPost(slug).subscribe({
       next: (post) => {
         this.post = post;
         this.loading = false;
+        if (post) {
+          const adj = this.blogService.getAdjacentPosts(slug);
+          this.prevPost = adj.prev;
+          this.nextPost = adj.next;
+        }
       },
       error: () => {
         this.post = null;
+        this.prevPost = null;
+        this.nextPost = null;
         this.loading = false;
       }
     });

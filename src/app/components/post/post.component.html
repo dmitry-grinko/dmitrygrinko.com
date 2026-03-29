@@ -17,6 +17,25 @@
        class="content" 
        [innerHTML]="post.content">
   </div>
+
+  <nav *ngIf="post && post.content && (prevPost || nextPost)"
+       class="post-nav"
+       aria-label="Предыдущая и следующая статья">
+    <a *ngIf="prevPost as p"
+       [routerLink]="['/post', p.slug]"
+       class="post-nav-btn"
+       aria-label="Предыдущая статья">←</a>
+    <span *ngIf="!prevPost"
+          class="post-nav-btn post-nav-btn--placeholder"
+          aria-hidden="true"></span>
+    <a *ngIf="nextPost as n"
+       [routerLink]="['/post', n.slug]"
+       class="post-nav-btn"
+       aria-label="Следующая статья">→</a>
+    <span *ngIf="!nextPost"
+          class="post-nav-btn post-nav-btn--placeholder"
+          aria-hidden="true"></span>
+  </nav>
   
   <div *ngIf="!post && !loading" class="not-found">
     <h2>Post Not Found</h2>

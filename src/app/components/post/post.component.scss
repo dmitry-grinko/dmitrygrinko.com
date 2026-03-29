@@ -86,20 +86,14 @@
     margin: 1rem 0;
   }
 
-  :global(ul),
-  :global(ol) {
-    margin: 1rem 0;
-    padding-left: 2rem;
-  }
+  /* ul / ol / li: see global .post-content .content rules (innerHTML + * reset) */
 
-  :global(li) {
-    margin: 0.5rem 0;
-  }
-
-  :global(.clickable-image) {
+  /* All markdown images live here; clicks use delegation in PostComponent */
+  :global(img) {
     cursor: pointer;
     transition: transform 0.2s ease;
     max-width: 100%;
+    max-height: 300px;
     height: auto;
     display: block;
     margin: 1rem auto;

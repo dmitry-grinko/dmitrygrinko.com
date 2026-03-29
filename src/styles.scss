@@ -212,6 +212,7 @@ pre code.hljs {
 /* Image styling for markdown posts */
 .post-image {
   max-width: 50% !important;
+  max-height: 300px !important;
   height: auto !important;
   border-radius: 8px !important;
   margin: 1.5rem 0 !important;
@@ -226,6 +227,34 @@ pre code.hljs {
     margin: 1rem 0 !important;
     border-radius: 6px !important;
   }
+}
+
+/* Markdown lists: universal * reset sets padding: 0 on ul/ol, so markers sit in the gutter */
+.post-content .content ul,
+.post-content .content ol {
+  padding-left: 2rem;
+  padding-inline-start: 2rem;
+  margin: 1rem 0;
+  list-style-position: outside;
+}
+
+.post-content .content li {
+  margin: 0.5rem 0;
+  padding-left: 0;
+}
+
+.post-content .content ul ul,
+.post-content .content ul ol,
+.post-content .content ol ul,
+.post-content .content ol ol {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-content .content img {
+  max-height: 300px;
+  height: auto;
+  width: auto;
 }
 
 /* Scroll lock for mobile menu */

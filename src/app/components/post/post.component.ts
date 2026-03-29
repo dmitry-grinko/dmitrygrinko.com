@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ElementRef } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, ActivatedRoute } from '@angular/router';
 import { BlogService } from '../../services/blog.service';
@@ -12,7 +12,7 @@ import { ImageViewerComponent } from '../image-viewer/image-viewer.component';
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss']
 })
-export class PostComponent implements OnInit {
+export class PostComponent implements OnInit, AfterViewInit, OnDestroy {
   post: Post | null = null;
   loading: boolean = true;
   showImageViewer: boolean = false;
@@ -21,7 +21,7 @@ export class PostComponent implements OnInit {
   constructor(
     private blogService: BlogService,
     private route: ActivatedRoute,
-    private elementRef: ElementRef
+    private elementRef: ElementRef<HTMLElement>
   ) {}
 
   ngOnInit() {
@@ -31,16 +31,29 @@ export class PostComponent implements OnInit {
     });
   }
 
-  private setupImageClickHandlers() {
-    // Add click event listeners to all clickable images
-    const images = this.elementRef.nativeElement.querySelectorAll('.clickable-image');
-    images.forEach((img: HTMLImageElement) => {
-      img.addEventListener('click', () => {
-        this.selectedImageUrl = img.src;
-        this.showImageViewer = true;
-      });
-    });
+  ngAfterViewInit(): void {
+    this.elementRef.nativeElement.addEventListener('click', this.onPostImageClick);
   }
+
+  ngOnDestroy(): void {
+    this.elementRef.nativeElement.removeEventListener('click', this.onPostImageClick);
+  }
+
+  /** Delegated handler: works after innerHTML updates (avoids race with setTimeout vs change detection). */
+  private onPostImageClick = (event: MouseEvent): void => {
+    const target = event.target;
+    if (!(target instanceof HTMLImageElement)) {
+      return;
+    }
+    const contentEl = this.elementRef.nativeElement.querySelector('.content');
+    if (!contentEl || !contentEl.contains(target)) {
+      return;
+    }
+    event.preventDefault();
+    event.stopPropagation();
+    this.selectedImageUrl = target.currentSrc || target.src;
+    this.showImageViewer = true;
+  };
 
   private loadPost(slug: string) {
     this.loading = true;
@@ -48,10 +61,6 @@ export class PostComponent implements OnInit {
       next: (post) => {
         this.post = post;
         this.loading = false;
-        // Setup image click handlers after content is loaded and rendered
-        setTimeout(() => {
-          this.setupImageClickHandlers();
-        }, 0);
       },
       error: () => {
         this.post = null;

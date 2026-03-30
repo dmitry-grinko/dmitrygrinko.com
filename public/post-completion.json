@@ -1,6 +1,6 @@
 {
   "minLines": 5,
-  "generatedAt": "2026-03-30T16:41:53.162Z",
+  "generatedAt": "2026-03-30T17:14:44.635Z",
   "posts": {
     "1-what-is-machine-learning": {
       "lineCount": 266,
@@ -431,160 +431,160 @@
       "written": true
     },
     "16-clustering-algorithms": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 48,
+      "written": true
     },
     "17-what-is-dimensionality-reduction": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 44,
+      "written": true
     },
     "18-why-dimensionality-reduction-is-useful": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 44,
+      "written": true
     },
     "19-dimensionality-reduction-algorithms": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 47,
+      "written": true
     },
     "2-main-types-of-learning-in-ml": {
       "lineCount": 67,
       "written": true
     },
     "20-where-is-unsupervised-learning-used": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 51,
+      "written": true
     },
     "21-what-is-semi-supervised-learning": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 42,
+      "written": true
     },
     "22-why-semi-supervised-learning-in-practice": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 48,
+      "written": true
     },
     "23-when-labeled-data-is-scarce": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 46,
+      "written": true
     },
     "24-using-unlabeled-data-in-training": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 39,
+      "written": true
     },
     "25-semi-supervised-methods": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 37,
+      "written": true
     },
     "26-semi-supervised-vs-supervised": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 36,
+      "written": true
     },
     "27-semi-supervised-vs-unsupervised": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 42,
+      "written": true
     },
     "28-semi-supervised-challenges": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 47,
+      "written": true
     },
     "29-semi-supervised-advantages": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 39,
+      "written": true
     },
     "3-supervised-vs-unsupervised-learning": {
       "lineCount": 48,
       "written": true
     },
     "30-semi-supervised-application-domains": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 47,
+      "written": true
     },
     "31-what-is-self-supervised-learning": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 34,
+      "written": true
     },
     "32-self-supervised-vs-unsupervised": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 36,
+      "written": true
     },
     "33-why-self-supervised-became-popular": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 40,
+      "written": true
     },
     "34-self-supervised-tasks": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 41,
+      "written": true
     },
     "35-what-is-pretext-task": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 39,
+      "written": true
     },
     "36-self-supervised-in-nlp": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 38,
+      "written": true
     },
     "37-self-supervised-in-vision": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 39,
+      "written": true
     },
     "38-self-supervised-in-llms": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 40,
+      "written": true
     },
     "39-self-supervised-needs-large-data": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 37,
+      "written": true
     },
     "4-what-is-supervised-learning": {
       "lineCount": 53,
       "written": true
     },
     "40-self-supervised-vs-supervised-advantages": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 42,
+      "written": true
     },
     "41-what-is-reinforcement-learning": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 42,
+      "written": true
     },
     "42-rl-system-components": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 45,
+      "written": true
     },
     "43-what-is-rl-agent": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 36,
+      "written": true
     },
     "44-what-is-environment-in-rl": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 39,
+      "written": true
     },
     "45-what-is-reward-in-rl": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 33,
+      "written": true
     },
     "46-what-is-policy-in-rl": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 37,
+      "written": true
     },
     "47-exploration-vs-exploitation": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 34,
+      "written": true
     },
     "48-where-is-reinforcement-learning-used": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 49,
+      "written": true
     },
     "49-rl-training-challenges": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 41,
+      "written": true
     },
     "5-what-tasks-does-supervised-learning-solve": {
       "lineCount": 52,
       "written": true
     },
     "50-rl-vs-other-paradigms": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 31,
+      "written": true
     },
     "6-training-data-in-supervised-learning": {
       "lineCount": 56,

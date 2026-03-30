@@ -125,3 +125,53 @@
     }
   }
 } 
+
+/* Mobile/touch: disable hover/active/visited/focus visual states. */
+@media (hover: none), (pointer: coarse) {
+  .post-card-link.focused .post-card {
+    background: var(--color-bg-primary) !important;
+  }
+
+  .post-card:hover {
+    background: var(--color-bg-primary) !important;
+  }
+
+  .breadcrumb-link:hover {
+    color: var(--color-text-secondary) !important;
+    background: transparent !important;
+  }
+
+  .post-card h2 a:visited,
+  .post-card h2 a:active,
+  .post-card h2 a:focus,
+  .post-card h2 a:focus-visible {
+    color: var(--color-text-primary) !important;
+    opacity: 1 !important;
+    text-decoration: none !important;
+  }
+
+  .subcategory-label.clickable:hover {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text-secondary) !important;
+    text-decoration: none !important;
+  }
+
+  .subcategory-label.clickable:visited,
+  .subcategory-label.clickable:active,
+  .subcategory-label.clickable:focus,
+  .subcategory-label.clickable:focus-visible {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text-secondary) !important;
+    text-decoration: none !important;
+  }
+
+  .read-more:hover,
+  .read-more:focus,
+  .read-more:visited,
+  .read-more:active,
+  .read-more:focus-visible {
+    color: var(--color-text-accent) !important;
+    opacity: 1 !important;
+    text-decoration: none !important;
+  }
+}

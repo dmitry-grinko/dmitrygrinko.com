@@ -116,3 +116,24 @@
     margin-top: 0.5rem;
   }
 }
+
+/* Mobile/touch: disable hover/active/visited/focus visual states. */
+@media (hover: none), (pointer: coarse) {
+  .post-card-link.focused .post-card {
+    background: var(--color-bg-primary) !important;
+  }
+
+  .post-card:hover {
+    background: var(--color-bg-primary) !important;
+  }
+
+  .breadcrumb-link:hover {
+    background: transparent !important;
+    color: var(--color-text-secondary) !important;
+  }
+
+  .subcategory-label.clickable:hover {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text-secondary) !important;
+  }
+}

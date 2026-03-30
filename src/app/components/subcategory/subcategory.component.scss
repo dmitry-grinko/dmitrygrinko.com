@@ -178,3 +178,40 @@
     }
   }
 } 
+
+/* Mobile/touch: disable hover/active/visited/focus visual states. */
+@media (hover: none), (pointer: coarse) {
+  .post-card-link.focused .post-card {
+    background: var(--color-bg-primary) !important;
+  }
+
+  .post-card:hover {
+    background: var(--color-bg-primary) !important;
+  }
+
+  .breadcrumb-link:hover {
+    background: transparent !important;
+    color: var(--color-text-secondary) !important;
+  }
+
+  .subcategory-label.clickable:hover {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text-secondary) !important;
+  }
+
+  .back-link:hover,
+  .back-link:focus,
+  .back-link:visited,
+  .back-link:active,
+  .back-link:focus-visible {
+    text-decoration: none !important;
+  }
+
+  .read-more:hover,
+  .read-more:focus,
+  .read-more:visited,
+  .read-more:active,
+  .read-more:focus-visible {
+    text-decoration: none !important;
+  }
+}

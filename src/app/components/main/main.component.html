@@ -21,14 +21,16 @@
         </p>
 
         <ul class="content-list">
-          <li>machine learning fundamentals</li>
-          <li>PyTorch engineering</li>
-          <li>distributed training</li>
-          <li>GPU and performance optimization</li>
-          <li>ML infrastructure</li>
-          <li>large-scale model training</li>
-          <li>LLM systems</li>
+          <li *ngFor="let topic of topicCategoryLinks">
+            <a [routerLink]="['/category', topic.slug]" class="content-list-link">{{ topic.label }}</a>
+          </li>
         </ul>
+
+        <h3 class="section-heading">Language</h3>
+
+        <p>
+          The posts are in Russian for now. I plan to add English once the full set of articles is written.
+        </p>
 
         <p>
           Most posts are written as structured notes while I learn and explore the field.

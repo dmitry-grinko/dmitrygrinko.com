@@ -1,6 +1,6 @@
 {
   "minLines": 5,
-  "generatedAt": "2026-03-30T02:06:03.031Z",
+  "generatedAt": "2026-03-30T16:26:49.747Z",
   "posts": {
     "1-what-is-machine-learning": {
       "lineCount": 266,
@@ -195,7 +195,7 @@
       "written": true
     },
     "8-what-is-a-feature": {
-      "lineCount": 43,
+      "lineCount": 41,
       "written": true
     },
     "9-what-is-a-label-or-target": {
@@ -403,12 +403,12 @@
       "written": false
     },
     "1-what-is-learning-paradigm-in-ml": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 51,
+      "written": true
     },
     "10-common-supervised-learning-algorithms": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 60,
+      "written": true
     },
     "11-what-is-unsupervised-learning": {
       "lineCount": 3,
@@ -447,8 +447,8 @@
       "written": false
     },
     "2-main-types-of-learning-in-ml": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 67,
+      "written": true
     },
     "20-where-is-unsupervised-learning-used": {
       "lineCount": 3,
@@ -491,8 +491,8 @@
       "written": false
     },
     "3-supervised-vs-unsupervised-learning": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 48,
+      "written": true
     },
     "30-semi-supervised-application-domains": {
       "lineCount": 3,
@@ -535,8 +535,8 @@
       "written": false
     },
     "4-what-is-supervised-learning": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 53,
+      "written": true
     },
     "40-self-supervised-vs-supervised-advantages": {
       "lineCount": 3,
@@ -579,28 +579,28 @@
       "written": false
     },
     "5-what-tasks-does-supervised-learning-solve": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 52,
+      "written": true
     },
     "50-rl-vs-other-paradigms": {
       "lineCount": 3,
       "written": false
     },
     "6-training-data-in-supervised-learning": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 56,
+      "written": true
     },
     "7-why-supervised-learning-needs-labeled-data": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 45,
+      "written": true
     },
     "8-supervised-learning-task-examples": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 46,
+      "written": true
     },
     "9-regression-vs-classification": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 48,
+      "written": true
     },
     "1-ml-data-what-is-data": {
       "lineCount": 3,

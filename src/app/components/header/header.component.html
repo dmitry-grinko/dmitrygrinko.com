@@ -124,14 +124,14 @@
   <!-- Search Overlay -->
   <div 
     class="search-overlay" 
-    [class.visible]="searchResults.length > 0 && searchQuery.length > 0"
+    [class.visible]="isSearchExpanded && searchResults.length > 0 && searchQuery.length > 0"
     (click)="clearSearch()"
   ></div>
 
   <!-- Search Results Dropdown -->
   <div 
     class="search-results" 
-    [class.visible]="searchResults.length > 0 && searchQuery.length > 0"
+    [class.visible]="isSearchExpanded && searchResults.length > 0 && searchQuery.length > 0"
   >
     <div class="search-results-container">
       <div class="search-results-header">

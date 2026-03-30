@@ -44,6 +44,10 @@
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
+  display: inline-block;
+  padding: 4px 0;
+  -webkit-tap-highlight-color: rgba(128, 128, 128, 0.25);
+  touch-action: manipulation;
 
   &:hover {
     text-decoration: underline;
@@ -62,17 +66,29 @@
 }
 
 .subcategory-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
   color: var(--color-text-secondary);
   text-decoration: none;
   background: var(--color-bg-secondary);
   border: 1px solid var(--color-border-primary);
   border-radius: 6px;
-  padding: 8px 10px;
+  padding: 12px 12px;
+  min-height: 44px;
+  box-sizing: border-box;
   transition: var(--theme-transition);
+  -webkit-tap-highlight-color: rgba(128, 128, 128, 0.2);
+  touch-action: manipulation;
 
   &:hover {
     color: var(--color-text-primary);
     background: var(--color-surface-hover);
+  }
+
+  &:active {
+    opacity: 0.92;
   }
 }
 

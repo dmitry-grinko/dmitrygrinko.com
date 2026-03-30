@@ -1,6 +1,6 @@
 {
   "minLines": 5,
-  "generatedAt": "2026-03-30T19:14:55.695Z",
+  "generatedAt": "2026-03-30T19:20:14.950Z",
   "posts": {
     "1-what-is-machine-learning": {
       "lineCount": 266,
@@ -11,7 +11,7 @@
       "written": true
     },
     "11-what-is-inference": {
-      "lineCount": 65,
+      "lineCount": 67,
       "written": true
     },
     "12-training-vs-inference": {

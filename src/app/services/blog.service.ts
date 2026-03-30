@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
+import { map, catchError, shareReplay } from 'rxjs/operators';
 import { marked } from 'marked';
 import hljs from 'highlight.js';
 import { ThemeService } from './theme.service';
-import { Post, PostMetadata, CategoryTree, SubCategory, PredefinedCategories, PredefinedCategory, PredefinedSubcategory } from '../models/post.interface';
+import { Post, PostMetadata, CategoryTree, SubCategory, PredefinedCategories, PredefinedCategory, PredefinedSubcategory, PostCompletionFile } from '../models/post.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BlogService {
-  private allPostsCache: PostMetadata[] | null = null;
+  /** Slug → written (from /post-completion.json). Cached after first HTTP response. */
+  private completionWrittenMap$: Observable<Record<string, boolean>>;
 
   /** Category order in nav and listings. */
   private readonly studyOrderCategorySlugs: string[] = [
@@ -4583,6 +4584,18 @@ export class BlogService {
     private http: HttpClient,
     private themeService: ThemeService
   ) {
+    this.completionWrittenMap$ = this.http.get<PostCompletionFile>('/post-completion.json').pipe(
+      map(file => {
+        const m: Record<string, boolean> = {};
+        for (const [slug, entry] of Object.entries(file.posts)) {
+          m[slug] = entry.written;
+        }
+        return m;
+      }),
+      catchError(() => of({} as Record<string, boolean>)),
+      shareReplay(1)
+    );
+
     // Configure marked for better security and formatting
     marked.setOptions({
       gfm: true,
@@ -4626,25 +4639,18 @@ export class BlogService {
     marked.setOptions({ renderer });
   }
 
-  private loadAllPostsMetadata(): Observable<PostMetadata[]> {
-    if (this.allPostsCache) {
-      return of(this.allPostsCache);
-    }
-
-    this.allPostsCache = this.buildAllPostsInNavOrder();
-    return of(this.allPostsCache);
-  }
-
   getAllPosts(): Observable<PostMetadata[]> {
-    return this.loadAllPostsMetadata();
+    return this.completionWrittenMap$.pipe(
+      map(writtenMap => {
+        const base = this.buildAllPostsInNavOrder();
+        return base.map(p => ({ ...p, written: writtenMap[p.slug] ?? false }));
+      })
+    );
   }
 
   /** Previous / next article in global curriculum order (same as aggregated listing). */
   getAdjacentPosts(slug: string): { prev: PostMetadata | null; next: PostMetadata | null } {
-    if (!this.allPostsCache) {
-      this.allPostsCache = this.buildAllPostsInNavOrder();
-    }
-    const flat = this.allPostsCache;
+    const flat = this.buildAllPostsInNavOrder();
     const idx = flat.findIndex(p => p.slug === slug);
     if (idx === -1) {
       return { prev: null, next: null };
@@ -4656,7 +4662,12 @@ export class BlogService {
   }
 
   getPostsByCategory(categorySlug: string): Observable<PostMetadata[]> {
-    return of(this.getFlattenedCategoryPosts(categorySlug));
+    return this.completionWrittenMap$.pipe(
+      map(writtenMap => {
+        const posts = this.getFlattenedCategoryPosts(categorySlug);
+        return posts.map(p => ({ ...p, written: writtenMap[p.slug] ?? false }));
+      })
+    );
   }
 
   getPost(slug: string): Observable<Post | null> {
@@ -4719,6 +4730,12 @@ export class BlogService {
   }
 
   getCategoryTree(): Observable<CategoryTree[]> {
+    return this.completionWrittenMap$.pipe(
+      map(writtenMap => this.applyCompletionToCategoryTree(this.buildCategoryTreeFromPredefined(), writtenMap))
+    );
+  }
+
+  private buildCategoryTreeFromPredefined(): CategoryTree[] {
     const result: CategoryTree[] = [];
     const orderedSlugs = new Set(this.studyOrderCategorySlugs);
 
@@ -4764,7 +4781,30 @@ export class BlogService {
       }
     }
 
-    return of(result);
+    return result;
+  }
+
+  private applyCompletionToCategoryTree(
+    tree: CategoryTree[],
+    writtenMap: Record<string, boolean>
+  ): CategoryTree[] {
+    return tree.map(cat => {
+      const subcats = cat.subcategories.map(sub => {
+        const postsWithWritten = (sub.posts ?? []).map(p => ({
+          ...p,
+          written: writtenMap[p.slug] ?? false
+        }));
+        const completed =
+          postsWithWritten.length > 0 && postsWithWritten.every(p => p.written);
+        return {
+          ...sub,
+          posts: postsWithWritten,
+          completed
+        };
+      });
+      const completed = subcats.length > 0 && subcats.every(s => s.completed);
+      return { ...cat, subcategories: subcats, completed };
+    });
   }
 
   getPostsBySubcategory(categorySlug: string, subcategorySlug: string): Observable<PostMetadata[]> {
@@ -4786,7 +4826,9 @@ export class BlogService {
       subcategorySlug: subcategoryData.slug
     }));
 
-    return of(posts);
+    return this.completionWrittenMap$.pipe(
+      map(writtenMap => posts.map(p => ({ ...p, written: writtenMap[p.slug] ?? false })))
+    );
   }
 
   private parseMarkdown(markdown: string): string {

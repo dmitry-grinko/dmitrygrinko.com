@@ -18,7 +18,9 @@
       <div class="post-meta">
         <span class="subcategory-label" *ngIf="post.subcategory">{{ post.subcategory }}</span>
       </div>
-      <h2>{{ post.title }}</h2>
+      <h2>
+        {{ post.title }}<span *ngIf="post.written" class="completion-check" aria-label="Post drafted" title="Post drafted">✓</span>
+      </h2>
       <p class="excerpt">{{ post.excerpt }}</p>
     </article>
   </a>

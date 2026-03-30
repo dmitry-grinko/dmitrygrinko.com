@@ -15,6 +15,7 @@
   --color-surface-hover: #f6f8fa;
   --color-accent-bg: #e3f2fd;
   --color-accent-text: #1976d2;
+  --color-success: #16a34a;
   
   /* Transition for smooth theme switching */
   --theme-transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
@@ -36,6 +37,14 @@
   --color-surface-hover: #21262d;
   --color-accent-bg: #1c2128;
   --color-accent-text: #58a6ff;
+  --color-success: #4ade80;
+}
+
+.completion-check {
+  color: var(--color-success);
+  font-weight: 600;
+  margin-left: 0.35em;
+  flex-shrink: 0;
 }
 
 /* Text Selection Styles */

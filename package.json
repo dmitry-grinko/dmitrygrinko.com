@@ -4,6 +4,9 @@
   "author": "Dmitry Grinko",
   "scripts": {
     "ng": "ng",
+    "generate:post-completion": "node scripts/generate-post-completion.mjs",
+    "prestart": "node scripts/generate-post-completion.mjs",
+    "prebuild": "node scripts/generate-post-completion.mjs",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",

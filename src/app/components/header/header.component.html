@@ -30,6 +30,7 @@
             >
               <span class="category-arrow" [class.open]="isCategoryExpanded(category.name)">▶</span>
               <span class="category-name">{{ category.name }}</span>
+              <span *ngIf="category.completed" class="completion-check" aria-label="All topics in this stage completed" title="All topics in this stage completed">✓</span>
               <span class="category-count">({{ category.count }})</span>
             </button>
           </div>
@@ -38,7 +39,8 @@
                [routerLink]="['/subcategory', category.slug, subcategory.slug]"
                class="subcategory-item"
                (click)="closeCategoriesDropdown()">
-              {{ subcategory.name }} ({{ subcategory.count }})
+              <span class="subcategory-item-text">{{ subcategory.name }} ({{ subcategory.count }})</span>
+              <span *ngIf="subcategory.completed" class="completion-check" aria-label="All posts in this section written" title="All posts in this section written">✓</span>
             </a>
           </div>
         </div>

@@ -85,8 +85,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
       }
     }
 
-    // Handle Ctrl+S globally (works from anywhere)
-    if (event.ctrlKey && event.key === 's') {
+    // Handle Ctrl/Cmd+S globally (layout-independent via physical key code)
+    if ((event.ctrlKey || event.metaKey) && event.code === 'KeyS') {
       if (this.isSearchExpanded) {
         this.collapseSearch();
       } else {
@@ -96,8 +96,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
       return;
     }
 
-    // Handle Ctrl+C globally (works from anywhere)
-    if (event.ctrlKey && event.key === 'c') {
+    // Handle Ctrl/Cmd+C globally (layout-independent via physical key code)
+    if ((event.ctrlKey || event.metaKey) && event.code === 'KeyC') {
       this.cycleToNextCategory();
       event.preventDefault();
       return;

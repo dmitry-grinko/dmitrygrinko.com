@@ -1,0 +1,40 @@
+<header class="header">
+  <div class="breadcrumbs">
+    <span class="breadcrumb-item">Categories</span>
+  </div>
+</header>
+
+<main class="categories-grid">
+  <section *ngFor="let category of categories" class="category-card">
+    <div class="category-title-row">
+      <a [routerLink]="['/category', category.slug]" class="category-link">
+        {{ category.name }}
+      </a>
+      <span
+        *ngIf="category.completed"
+        class="completion-check"
+        aria-label="All subcategories completed"
+        title="All subcategories completed">✓</span>
+    </div>
+
+    <p class="category-count">{{ category.count }} post(s)</p>
+
+    <div class="subcategories">
+      <a
+        *ngFor="let subcategory of category.subcategories"
+        [routerLink]="['/subcategory', category.slug, subcategory.slug]"
+        class="subcategory-link">
+        {{ subcategory.name }} ({{ subcategory.count }})
+        <span
+          *ngIf="subcategory.completed"
+          class="completion-check"
+          aria-label="All posts written"
+          title="All posts written">✓</span>
+      </a>
+    </div>
+  </section>
+</main>
+
+<div *ngIf="categories.length === 0" class="no-categories">
+  <p>No categories found.</p>
+</div>

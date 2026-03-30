@@ -1,7 +1,7 @@
 <header class="header">
   <div *ngIf="post" class="post-header">
     <div class="breadcrumbs">
-      <a [routerLink]="['/category', getCategorySlug()]" class="breadcrumb-link">
+      <a [routerLink]="['/categories']" class="breadcrumb-link">
         {{ post.category }}
       </a>
       <span class="breadcrumb-separator">></span>

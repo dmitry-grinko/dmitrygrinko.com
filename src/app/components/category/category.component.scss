@@ -20,6 +20,20 @@
   transition: var(--theme-transition);
 }
 
+.breadcrumb-link {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: var(--theme-transition);
+
+  &:hover {
+    color: var(--color-text-primary);
+  }
+}
+
+.breadcrumb-separator {
+  color: var(--color-text-secondary);
+}
+
 .posts-grid {
   display: grid;
   gap: 24px;

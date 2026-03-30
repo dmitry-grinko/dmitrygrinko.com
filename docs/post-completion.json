@@ -1,6 +1,6 @@
 {
   "minLines": 5,
-  "generatedAt": "2026-03-30T16:26:49.747Z",
+  "generatedAt": "2026-03-30T16:41:53.162Z",
   "posts": {
     "1-what-is-machine-learning": {
       "lineCount": 266,
@@ -411,24 +411,24 @@
       "written": true
     },
     "11-what-is-unsupervised-learning": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 50,
+      "written": true
     },
     "12-what-tasks-does-unsupervised-learning-solve": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 51,
+      "written": true
     },
     "13-unsupervised-vs-supervised-learning": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 57,
+      "written": true
     },
     "14-data-used-in-unsupervised-learning": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 49,
+      "written": true
     },
     "15-what-is-clustering": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 50,
+      "written": true
     },
     "16-clustering-algorithms": {
       "lineCount": 3,

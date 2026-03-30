@@ -60,14 +60,29 @@
   box-sizing: border-box;
 }
 
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 1rem 0;
+  max-width: 100%;
+}
+
 tr {
   padding: 4px;
   text-align: left;
 }
 
-th {
-  padding: 4px;
+th,
+td {
+  padding: 8px 12px;
   text-align: left;
+  border: 1px solid var(--color-border-primary);
+  transition: var(--theme-transition);
+}
+
+th {
+  background: var(--color-bg-secondary);
+  font-weight: 600;
 }
 
 /* Prevent rubber band/bounce scrolling effect */
@@ -265,6 +280,12 @@ pre code.hljs {
   max-height: 300px;
   height: auto;
   width: auto;
+}
+
+/* Markdown tables (innerHTML): ensure cell padding survives any reset */
+.post-content .content th,
+.post-content .content td {
+  padding: 8px 12px;
 }
 
 /* Scroll lock for mobile menu */

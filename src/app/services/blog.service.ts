@@ -122,7 +122,7 @@ export class BlogService {
   // Paths: /data/posts/{category-slug}/{n-subcategory-slug}/{post-slug}.md
   private predefinedCategories: PredefinedCategories = {
     'stage-0-machine-learning-fundamentals': {
-      name: 'Stage 0 — Machine Learning Fundamentals',
+      name: '0 — Machine Learning Fundamentals',
       slug: 'stage-0-machine-learning-fundamentals',
       subcategories: [
         {
@@ -688,7 +688,7 @@ export class BlogService {
       ]
     },
     'stage-1-pytorch-engineering': {
-      name: 'Stage 1 — PyTorch Engineering',
+      name: '1 — PyTorch Engineering',
       slug: 'stage-1-pytorch-engineering',
       subcategories: [
         {
@@ -1142,7 +1142,7 @@ export class BlogService {
       ]
     },
     'stage-2-gpu-and-performance-engineering': {
-      name: 'Stage 2 — GPU and Performance Engineering',
+      name: '2 — GPU and Performance Engineering',
       slug: 'stage-2-gpu-and-performance-engineering',
       subcategories: [
         {
@@ -1764,7 +1764,7 @@ export class BlogService {
       ]
     },
     'stage-3-distributed-training': {
-      name: 'Stage 3 — Distributed Training',
+      name: '3 — Distributed Training',
       slug: 'stage-3-distributed-training',
       subcategories: [
         {
@@ -2233,11 +2233,11 @@ export class BlogService {
             { title: '12. Почему ZeRO был разработан для distributed training?', slug: '12-s3-zfsdp-why-zero', excerpt: 'Убрать избыточные копии на data parallel.' },
             { title: '13. Какие проблемы решает ZeRO?', slug: '13-s3-zfsdp-zero-problems', excerpt: 'OOM и дублирование optimizer state.' },
             { title: '14. Что означает zero redundancy в контексте optimizer?', slug: '14-s3-zfsdp-zero-redundancy', excerpt: 'Нет полной копии состояния на каждом GPU.' },
-            { title: '15. Как ZeRO уменьшает дублирование параметров?', slug: '15-s3-zfsdp-zero-dup-params', excerpt: 'Stage 3 шарит веса с all-gather.' },
-            { title: '16. Какие стадии оптимизации существуют в ZeRO?', slug: '16-s3-zfsdp-stages', excerpt: 'Stage 1/2/3 и offload.' },
-            { title: '17. Что делает ZeRO Stage 1?', slug: '17-s3-zfsdp-stage1', excerpt: 'Шардинг состояний оптимизатора.' },
-            { title: '18. Что делает ZeRO Stage 2?', slug: '18-s3-zfsdp-stage2', excerpt: 'Плюс шардинг градиентов.' },
-            { title: '19. Что делает ZeRO Stage 3?', slug: '19-s3-zfsdp-stage3', excerpt: 'Шардинг параметров с all-gather.' },
+            { title: '15. Как ZeRO уменьшает дублирование параметров?', slug: '15-s3-zfsdp-zero-dup-params', excerpt: '3 шарит веса с all-gather.' },
+            { title: '16. Какие стадии оптимизации существуют в ZeRO?', slug: '16-s3-zfsdp-stages', excerpt: '1/2/3 и offload.' },
+            { title: '17. Что делает ZeRO 1?', slug: '17-s3-zfsdp-stage1', excerpt: 'Шардинг состояний оптимизатора.' },
+            { title: '18. Что делает ZeRO 2?', slug: '18-s3-zfsdp-stage2', excerpt: 'Плюс шардинг градиентов.' },
+            { title: '19. Что делает ZeRO 3?', slug: '19-s3-zfsdp-stage3', excerpt: 'Шардинг параметров с all-gather.' },
             { title: '20. Чем стадии ZeRO отличаются друг от друга?', slug: '20-s3-zfsdp-stages-diff', excerpt: 'Глубина шардинга и объём коммуникации.' },
             { title: '21. Как ZeRO распределяет optimizer state между GPU?', slug: '21-s3-zfsdp-zero-opt', excerpt: 'Партиции по рангам и collectives.' },
             { title: '22. Как ZeRO распределяет gradients между GPU?', slug: '22-s3-zfsdp-zero-grad', excerpt: 'Reduce-scatter и частичные буферы.' },
@@ -2498,7 +2498,7 @@ export class BlogService {
       ]
     },
     'stage-4-ml-infrastructure': {
-      name: 'Stage 4 — ML Infrastructure',
+      name: '4 — ML Infrastructure',
       slug: 'stage-4-ml-infrastructure',
       subcategories: [
         {
@@ -3232,7 +3232,7 @@ export class BlogService {
       ]
     },
     'stage-5-large-model-training': {
-      name: 'Stage 5 — Large Model Training',
+      name: '5 — Large Model Training',
       slug: 'stage-5-large-model-training',
       subcategories: [
         {
@@ -3672,7 +3672,7 @@ export class BlogService {
             { title: '39. Как FSDP уменьшает memory usage?', slug: '39-s5-dist-fsdp-mem', excerpt: 'Каждый ранг хранит долю весов; gather по мере forward/backward.' },
             { title: '40. Что такое ZeRO optimization?', slug: '40-s5-dist-zero-def', excerpt: 'Семейство шардирования состояний обучения из DeepSpeed (оптимизатор, градиенты, параметры).' },
             { title: '41. Как ZeRO уменьшает memory footprint модели?', slug: '41-s5-dist-zero-mem', excerpt: 'Разносит optimizer states и при старших стадиях — параметры и градиенты.' },
-            { title: '42. Какие стадии ZeRO существуют?', slug: '42-s5-dist-zero-stages', excerpt: 'Stage 1: optimizer states; 2: +gradients; 3: +parameters; Offload на CPU/NVMe.' },
+            { title: '42. Какие стадии ZeRO существуют?', slug: '42-s5-dist-zero-stages', excerpt: '1: optimizer states; 2: +gradients; 3: +parameters; Offload на CPU/NVMe.' },
             { title: '43. Как ZeRO помогает обучать extremely large models?', slug: '43-s5-dist-zero-xl', excerpt: 'Позволяет уместить модели, не помещающиеся на одном GPU даже с FSDP-уровнем идей.' },
             { title: '44. Какие сложности возникают при debugging distributed training?', slug: '44-s5-dist-debug', excerpt: 'Недетерминизм, гонки, логи с многих ранков, невоспроизводимость на одной GPU.' },
             { title: '45. Почему distributed training может зависать?', slug: '45-s5-dist-hang', excerpt: 'Deadlock коллективов, один медленный ранг, сетевой разрыв или несовпадение барьеров.' },
@@ -3910,7 +3910,7 @@ export class BlogService {
       ]
     },
     'stage-6-advanced-ml-systems': {
-      name: 'Stage 6 — Advanced ML Systems',
+      name: '6 — Advanced ML Systems',
       slug: 'stage-6-advanced-ml-systems',
       subcategories: [
         {

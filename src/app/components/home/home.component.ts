@@ -69,7 +69,7 @@ export class HomeComponent implements OnInit {
       case 'mathematics': return 'mathematics';
       case 'python': return 'python';
       case 'machine learning algorithms': return 'machine-learning-algorithms';
-      case 'stage 0 — machine learning fundamentals': return 'stage-0-machine-learning-fundamentals';
+      case '0 — machine learning fundamentals': return 'stage-0-machine-learning-fundamentals';
       default: return name.replace(/\s+/g, '-');
     }
   }

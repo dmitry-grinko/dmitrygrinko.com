@@ -60,6 +60,16 @@
   box-sizing: border-box;
 }
 
+tr {
+  padding: 4px;
+  text-align: left;
+}
+
+th {
+  padding: 4px;
+  text-align: left;
+}
+
 /* Prevent rubber band/bounce scrolling effect */
 html, body {
   overscroll-behavior: none;

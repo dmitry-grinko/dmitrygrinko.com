@@ -1,14 +1,25 @@
-import { Component, OnInit, AfterViewInit, OnDestroy, ElementRef, HostListener } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  AfterViewInit,
+  OnDestroy,
+  ElementRef,
+  HostListener,
+  ViewChild
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { Router, RouterModule, ActivatedRoute } from '@angular/router';
 import { BlogService } from '../../services/blog.service';
+import { PostTagsService } from '../../services/post-tags.service';
 import { Post, PostMetadata } from '../../models/post.interface';
 import { ImageViewerComponent } from '../image-viewer/image-viewer.component';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-post',
   standalone: true,
-  imports: [CommonModule, RouterModule, ImageViewerComponent],
+  imports: [CommonModule, FormsModule, RouterModule, ImageViewerComponent],
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss']
 })
@@ -19,9 +30,17 @@ export class PostComponent implements OnInit, AfterViewInit, OnDestroy {
   loading: boolean = true;
   showImageViewer: boolean = false;
   selectedImageUrl: string = '';
+  postTags: string[] = [];
+  newTagInput = '';
+  showTagInput = false;
+
+  @ViewChild('tagInput') private tagInputRef?: ElementRef<HTMLInputElement>;
+
+  private tagsSub?: Subscription;
 
   constructor(
     private blogService: BlogService,
+    private postTagsService: PostTagsService,
     private route: ActivatedRoute,
     private router: Router,
     private elementRef: ElementRef<HTMLElement>
@@ -62,6 +81,7 @@ export class PostComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.tagsSub = this.postTagsService.tagsChanged$.subscribe(() => this.syncTagsFromStore());
     this.route.params.subscribe(params => {
       const slug = params['slug'];
       this.loadPost(slug);
@@ -73,7 +93,18 @@ export class PostComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.tagsSub?.unsubscribe();
     this.elementRef.nativeElement.removeEventListener('click', this.onPostImageClick);
+  }
+
+  /** Keeps tags in sync when storage changes (e.g. Reset in header). */
+  private syncTagsFromStore(): void {
+    if (this.loading || !this.post?.slug) {
+      return;
+    }
+    this.postTags = this.postTagsService.getTagsForPost(this.post.slug);
+    this.newTagInput = '';
+    this.showTagInput = false;
   }
 
   /** Delegated handler: works after innerHTML updates (avoids race with setTimeout vs change detection). */
@@ -104,6 +135,12 @@ export class PostComponent implements OnInit, AfterViewInit, OnDestroy {
           const adj = this.blogService.getAdjacentPosts(slug);
           this.prevPost = adj.prev;
           this.nextPost = adj.next;
+          this.postTags = this.postTagsService.getTagsForPost(slug);
+          this.newTagInput = '';
+          this.showTagInput = false;
+        } else {
+          this.postTags = [];
+          this.showTagInput = false;
         }
       },
       error: () => {
@@ -143,5 +180,48 @@ export class PostComponent implements OnInit, AfterViewInit, OnDestroy {
   closeImageViewer() {
     this.showImageViewer = false;
     this.selectedImageUrl = '';
+  }
+
+  get tagsForDatalist(): string[] {
+    return this.postTagsService.getAllTags().filter(
+      t => !this.postTags.some(p => p.toLowerCase() === t.toLowerCase())
+    );
+  }
+
+  addTag(): void {
+    if (!this.post?.slug) {
+      return;
+    }
+    const raw = this.newTagInput.trim().replace(/\s+/g, ' ');
+    if (!raw) {
+      return;
+    }
+    if (this.postTags.some(t => t.toLowerCase() === raw.toLowerCase())) {
+      this.newTagInput = '';
+      return;
+    }
+    const next = [...this.postTags, raw];
+    this.postTagsService.setTagsForPost(this.post.slug, next);
+    this.postTags = this.postTagsService.getTagsForPost(this.post.slug);
+    this.newTagInput = '';
+    this.showTagInput = false;
+  }
+
+  removeTag(tag: string): void {
+    if (!this.post?.slug) {
+      return;
+    }
+    const next = this.postTags.filter(t => t !== tag);
+    this.postTagsService.setTagsForPost(this.post.slug, next);
+    this.postTags = this.postTagsService.getTagsForPost(this.post.slug);
+  }
+
+  toggleTagInput(): void {
+    this.showTagInput = !this.showTagInput;
+    if (this.showTagInput) {
+      setTimeout(() => this.tagInputRef?.nativeElement?.focus(), 0);
+    } else {
+      this.newTagInput = '';
+    }
   }
 } 

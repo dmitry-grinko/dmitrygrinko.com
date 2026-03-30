@@ -1,0 +1,113 @@
+.header {
+  padding-bottom: 1rem;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  flex-wrap: wrap;
+}
+
+.breadcrumb-link {
+  background: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: var(--theme-transition);
+
+  &:hover {
+    background: var(--color-bg-tertiary);
+    color: var(--color-text-primary);
+  }
+}
+
+.breadcrumb-item {
+  background: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.breadcrumb-separator {
+  color: var(--color-text-secondary);
+}
+
+.posts-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.post-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  border-radius: 6px;
+  transition: var(--theme-transition);
+
+  &.focused .post-card {
+    background: var(--color-surface-hover);
+  }
+}
+
+.post-card {
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: 6px;
+  padding: 16px;
+  transition: var(--theme-transition);
+  cursor: pointer;
+
+  &:hover {
+    background: var(--color-surface-hover);
+  }
+
+  h2 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    line-height: 1.25;
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
+}
+
+.post-meta {
+  margin-bottom: 8px;
+}
+
+.subcategory-label {
+  background: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  text-decoration: none;
+  transition: var(--theme-transition);
+
+  &.clickable:hover {
+    background: var(--color-bg-tertiary);
+    color: var(--color-text-primary);
+  }
+}
+
+.excerpt {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.no-posts {
+  color: var(--color-text-secondary);
+  margin-top: 2rem;
+
+  .hint {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+}

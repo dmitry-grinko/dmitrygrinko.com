@@ -18,6 +18,43 @@
        [innerHTML]="post.content">
   </div>
 
+  <section *ngIf="post && post.content" class="post-tags-section" aria-labelledby="post-tags-heading">
+    <h2 id="post-tags-heading" class="post-tags-heading">Tags</h2>
+    <div class="tags-row">
+      <div class="tag-chips" *ngIf="postTags.length > 0">
+        <span *ngFor="let tag of postTags" class="tag-chip">
+          <a [routerLink]="['/tag', tag]" class="tag-chip-link">{{ tag }}</a>
+          <button type="button" class="tag-chip-remove" (click)="removeTag(tag)" [attr.aria-label]="'Remove tag ' + tag">×</button>
+        </span>
+      </div>
+      <button
+        type="button"
+        class="tag-add-toggle"
+        (click)="toggleTagInput()"
+        [attr.aria-label]="showTagInput ? 'Cancel adding tag' : 'Add tag'"
+        [title]="showTagInput ? 'Cancel' : 'Add tag'">
+        +
+      </button>
+    </div>
+    <div class="tag-add-controls" *ngIf="showTagInput">
+      <div class="tag-add-row">
+        <input
+          #tagInput
+          type="text"
+          class="tag-input"
+          [(ngModel)]="newTagInput"
+          list="post-tags-datalist"
+          placeholder="New or existing tag"
+          (keydown.enter)="$event.preventDefault(); addTag()"
+        />
+        <datalist id="post-tags-datalist">
+          <option *ngFor="let t of tagsForDatalist" [value]="t"></option>
+        </datalist>
+        <button type="button" class="tag-add-btn" (click)="addTag()">Add</button>
+      </div>
+    </div>
+  </section>
+
   <nav *ngIf="post && post.content && (prevPost || nextPost)"
        class="post-nav"
        aria-label="Предыдущая и следующая статья">

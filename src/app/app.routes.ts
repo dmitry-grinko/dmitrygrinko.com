@@ -26,6 +26,10 @@ export const routes: Routes = [
     loadComponent: () => import('./components/post/post.component').then(m => m.PostComponent)
   },
   {
+    path: 'tag/:tag',
+    loadComponent: () => import('./components/tag/tag.component').then(m => m.TagComponent)
+  },
+  {
     path: 'help',
     loadComponent: () => import('./components/help/help.component').then(m => m.HelpComponent)
   },

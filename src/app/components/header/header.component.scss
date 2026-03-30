@@ -282,6 +282,111 @@
   }
 }
 
+/* Tags dropdown (localStorage-backed) */
+.tags-dropdown {
+  position: relative;
+}
+
+.tags-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 12px;
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: 6px;
+  color: var(--color-text-primary);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--theme-transition);
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: var(--color-surface-hover);
+    border-color: var(--color-border-secondary);
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.tags-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 4px;
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  min-width: 220px;
+  max-width: min(90vw, 360px);
+  max-height: 70vh;
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.15s ease, background-color 0.3s ease, border-color 0.3s ease;
+  z-index: 1000;
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+.tags-menu-item {
+  display: block;
+  padding: 10px 14px;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--color-border-primary);
+  transition: var(--theme-transition);
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+
+  &:hover,
+  &:focus,
+  &:visited {
+    background: var(--color-surface-hover);
+    color: var(--color-text-primary);
+    text-decoration: none;
+  }
+}
+
+.tags-menu-separator {
+  height: 1px;
+  margin: 0;
+  background: var(--color-border-primary);
+  border: none;
+}
+
+.tags-menu-reset {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  text-align: left;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: var(--theme-transition);
+
+  &:hover,
+  &:focus-visible {
+    background: var(--color-surface-hover);
+    color: var(--color-text-primary);
+  }
+}
+
 /* Search */
 .search-container {
   display: flex;

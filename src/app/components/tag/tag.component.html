@@ -1,0 +1,37 @@
+<header class="header">
+  <div class="breadcrumbs">
+    <a routerLink="/categories" class="breadcrumb-link">Categories</a>
+    <span class="breadcrumb-separator">></span>
+    <span class="breadcrumb-item">Tag: {{ tagLabel }}</span>
+  </div>
+</header>
+
+<main class="posts-grid" *ngIf="posts.length > 0">
+  <a
+    *ngFor="let post of posts; let i = index"
+    [routerLink]="['/post', post.slug]"
+    class="post-card-link"
+    [attr.data-post-index]="i"
+    [class.focused]="isPostFocused(i)">
+    <article class="post-card">
+      <div class="post-meta">
+        <a
+          *ngIf="post.subcategory"
+          [routerLink]="['/subcategory', getCategorySlug(post.category, post.categorySlug), getSubcategorySlug(post.subcategory, post.subcategorySlug)]"
+          class="subcategory-label clickable"
+          (click)="$event.stopPropagation()">
+          {{ post.subcategory }}
+        </a>
+      </div>
+      <h2>
+        {{ post.title }}<span *ngIf="post.written" class="completion-check" aria-label="Post drafted" title="Post drafted">✓</span>
+      </h2>
+      <p class="excerpt">{{ post.excerpt }}</p>
+    </article>
+  </a>
+</main>
+
+<div *ngIf="posts.length === 0" class="no-posts">
+  <p>No posts tagged with “{{ tagLabel }}”.</p>
+  <p class="hint">Add this tag to posts from the post page — tags are saved in your browser only.</p>
+</div>

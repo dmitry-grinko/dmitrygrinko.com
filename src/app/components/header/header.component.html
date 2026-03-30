@@ -47,6 +47,33 @@
       </div>
     </div>
 
+      <!-- Tags (local storage) -->
+      <div *ngIf="tagsMenu.length > 0" class="tags-dropdown">
+        <button
+          class="tags-btn"
+          type="button"
+          (click)="toggleTagsDropdown()"
+          [attr.aria-expanded]="isTagsOpen"
+        >
+          Tags
+          <span class="dropdown-arrow" [class.open]="isTagsOpen">▼</span>
+        </button>
+        <div class="tags-menu" [class.open]="isTagsOpen">
+          <a
+            *ngFor="let tag of tagsMenu"
+            [routerLink]="['/tag', tag]"
+            class="tags-menu-item"
+            (click)="closeTagsDropdown()"
+          >{{ tag }}</a>
+          <div class="tags-menu-separator" role="separator" aria-hidden="true"></div>
+          <button
+            type="button"
+            class="tags-menu-reset"
+            (click)="resetAllTags()"
+          >Reset</button>
+        </div>
+      </div>
+
       <!-- Theme Toggle -->
       <button 
         class="theme-toggle-btn"

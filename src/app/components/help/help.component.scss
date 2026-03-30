@@ -79,6 +79,14 @@
   font-weight: 600;
   color: var(--color-text-primary);
   transition: var(--theme-transition);
+
+  &--label {
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    letter-spacing: 0.02em;
+  }
   
   kbd {
     background: var(--color-bg-secondary);

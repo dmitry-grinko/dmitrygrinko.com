@@ -3,8 +3,10 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { BlogService } from '../../services/blog.service';
+import { PostTagsService } from '../../services/post-tags.service';
 import { ThemeService, Theme } from '../../services/theme.service';
 import { PostMetadata, CategoryTree } from '../../models/post.interface';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -27,14 +29,20 @@ export class HeaderComponent implements OnInit, OnDestroy {
   currentCategoryIndex: number = -1;
   focusedSearchIndex: number = -1;
   currentTheme: Theme = 'light';
+  tagsMenu: string[] = [];
+  isTagsOpen: boolean = false;
+  private tagsSub?: Subscription;
 
   constructor(
     private blogService: BlogService,
+    private postTagsService: PostTagsService,
     private router: Router,
     private themeService: ThemeService
   ) {}
 
   ngOnInit() {
+    this.refreshTagsMenu();
+    this.tagsSub = this.postTagsService.tagsChanged$.subscribe(() => this.refreshTagsMenu());
     this.loadCategories();
     this.loadCategoryTree();
     this.loadAllPosts();
@@ -49,8 +57,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
+    this.tagsSub?.unsubscribe();
     // Clean up scroll lock when component is destroyed
     document.body.classList.remove('scroll-lock');
+  }
+
+  private refreshTagsMenu(): void {
+    this.tagsMenu = this.postTagsService.getAllTags();
   }
 
   @HostListener('document:click', ['$event'])
@@ -70,6 +83,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
     if (!target.closest('.categories-dropdown')) {
       this.closeCategoriesDropdown();
     }
+
+    if (!target.closest('.tags-dropdown')) {
+      this.closeTagsDropdown();
+    }
   }
 
   @HostListener('document:keydown', ['$event'])
@@ -85,8 +102,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
       }
     }
 
-    // Handle Ctrl/Cmd+S globally (layout-independent via physical key code)
-    if ((event.ctrlKey || event.metaKey) && event.code === 'KeyS') {
+    // Ctrl+S: search (use Ctrl only — Cmd+S is browser Save on macOS)
+    // event.code keeps the same physical keys in Russian layout (unlike event.key)
+    if (event.ctrlKey && !event.metaKey && event.code === 'KeyS') {
       if (this.isSearchExpanded) {
         this.collapseSearch();
       } else {
@@ -96,8 +114,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
       return;
     }
 
-    // Handle Ctrl/Cmd+C globally (layout-independent via physical key code)
-    if ((event.ctrlKey || event.metaKey) && event.code === 'KeyC') {
+    // Ctrl+C: next category (use Ctrl only — Cmd+C must stay system Copy on macOS)
+    if (event.ctrlKey && !event.metaKey && event.code === 'KeyC') {
       this.cycleToNextCategory();
       event.preventDefault();
       return;
@@ -186,6 +204,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   toggleCategoriesDropdown() {
     this.isCategoriesOpen = !this.isCategoriesOpen;
+    if (this.isCategoriesOpen) {
+      this.isTagsOpen = false;
+    }
     this.updateBodyScrollLock();
   }
 
@@ -194,8 +215,30 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.updateBodyScrollLock();
   }
 
+  toggleTagsDropdown() {
+    this.isTagsOpen = !this.isTagsOpen;
+    if (this.isTagsOpen) {
+      this.isCategoriesOpen = false;
+    }
+    this.updateBodyScrollLock();
+  }
+
+  closeTagsDropdown() {
+    this.isTagsOpen = false;
+    this.updateBodyScrollLock();
+  }
+
+  resetAllTags(): void {
+    this.postTagsService.clearAllTags();
+    this.refreshTagsMenu();
+    this.closeTagsDropdown();
+    if (this.router.url.startsWith('/tag/')) {
+      void this.router.navigate(['/blog']);
+    }
+  }
+
   private updateBodyScrollLock() {
-    if (this.isCategoriesOpen) {
+    if (this.isCategoriesOpen || this.isTagsOpen) {
       document.body.classList.add('scroll-lock');
     } else {
       document.body.classList.remove('scroll-lock');

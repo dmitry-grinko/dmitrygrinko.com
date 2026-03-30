@@ -204,6 +204,7 @@ export class PostComponent implements OnInit, AfterViewInit, OnDestroy {
     this.postTagsService.setTagsForPost(this.post.slug, next);
     this.postTags = this.postTagsService.getTagsForPost(this.post.slug);
     this.newTagInput = '';
+    this.tagInputRef?.nativeElement?.blur();
     this.showTagInput = false;
   }
 
@@ -217,11 +218,13 @@ export class PostComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   toggleTagInput(): void {
+    if (this.showTagInput) {
+      this.tagInputRef?.nativeElement?.blur();
+      this.newTagInput = '';
+    }
     this.showTagInput = !this.showTagInput;
     if (this.showTagInput) {
       setTimeout(() => this.tagInputRef?.nativeElement?.focus(), 0);
-    } else {
-      this.newTagInput = '';
     }
   }
 } 

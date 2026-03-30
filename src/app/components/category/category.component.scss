@@ -45,9 +45,12 @@
   display: block;
   border-radius: 6px;
   transition: var(--theme-transition);
+  -webkit-tap-highlight-color: transparent;
 
-  &.focused .post-card {
-    background: var(--color-surface-hover);
+  @media (hover: hover) and (pointer: fine) {
+    &.focused .post-card {
+      background: var(--color-surface-hover);
+    }
   }
 }
 
@@ -59,8 +62,10 @@
   transition: var(--theme-transition);
   cursor: pointer;
 
-  &:hover {
-    background: var(--color-surface-hover);
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background: var(--color-surface-hover);
+    }
   }
 
   h2 {
@@ -73,12 +78,18 @@
       text-decoration: none;
       transition: var(--theme-transition);
 
-      &:hover,
-      &:focus,
       &:visited,
       &:active {
         color: var(--color-text-primary);
         opacity: 0.8;
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover,
+        &:focus {
+          color: var(--color-text-primary);
+          opacity: 0.8;
+        }
       }
     }
   }

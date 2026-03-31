@@ -1,6 +1,6 @@
 {
   "minLines": 5,
-  "generatedAt": "2026-03-31T22:54:43.512Z",
+  "generatedAt": "2026-03-31T23:23:07.006Z",
   "posts": {
     "1-what-is-machine-learning": {
       "lineCount": 266,
@@ -803,204 +803,204 @@
       "written": true
     },
     "1-ml-linreg-what-is-linear-regression": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 37,
+      "written": true
     },
     "10-ml-linreg-linear-dependence": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 34,
+      "written": true
     },
     "11-ml-linreg-residual": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 39,
+      "written": true
     },
     "12-ml-linreg-loss-function": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 43,
+      "written": true
     },
     "13-ml-linreg-mse": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 44,
+      "written": true
     },
     "14-ml-linreg-why-mse": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 35,
+      "written": true
     },
     "15-ml-linreg-rmse": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 38,
+      "written": true
     },
     "16-ml-linreg-rmse-vs-mse": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 47,
+      "written": true
     },
     "17-ml-linreg-mae": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 40,
+      "written": true
     },
     "18-ml-linreg-mae-vs-mse": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 35,
+      "written": true
     },
     "19-ml-linreg-interpreting-error": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 41,
+      "written": true
     },
     "2-ml-linreg-tasks": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 43,
+      "written": true
     },
     "20-ml-linreg-why-minimize-error": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 33,
+      "written": true
     },
     "21-ml-linreg-model-parameters": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 37,
+      "written": true
     },
     "22-ml-linreg-how-parameters-learned": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 38,
+      "written": true
     },
     "23-ml-linreg-gradient-descent": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 34,
+      "written": true
     },
     "24-ml-linreg-gd-in-linear-regression": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 32,
+      "written": true
     },
     "25-ml-linreg-learning-rate": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 31,
+      "written": true
     },
     "26-ml-linreg-learning-rate-effect": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 31,
+      "written": true
     },
     "27-ml-linreg-learning-rate-too-large": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 28,
+      "written": true
     },
     "28-ml-linreg-learning-rate-too-small": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 23,
+      "written": true
     },
     "29-ml-linreg-convergence": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 29,
+      "written": true
     },
     "3-ml-linreg-mathematical-form": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 42,
+      "written": true
     },
     "30-ml-linreg-how-to-tell-converged": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 29,
+      "written": true
     },
     "31-ml-linreg-normal-equation": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 36,
+      "written": true
     },
     "32-ml-linreg-analytic-vs-gd": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 43,
+      "written": true
     },
     "33-ml-linreg-when-analytic": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 37,
+      "written": true
     },
     "34-ml-linreg-why-gd-large-data": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 35,
+      "written": true
     },
     "35-ml-linreg-number-of-features": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 42,
+      "written": true
     },
     "36-ml-linreg-strong-correlation": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 38,
+      "written": true
     },
     "37-ml-linreg-multicollinearity": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 34,
+      "written": true
     },
     "38-ml-linreg-why-multicollinearity-problem": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 28,
+      "written": true
     },
     "39-ml-linreg-detect-multicollinearity": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 38,
+      "written": true
     },
     "4-ml-linreg-coefficient-meaning": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 42,
+      "written": true
     },
     "40-ml-linreg-multicollinearity-remedies": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 34,
+      "written": true
     },
     "41-ml-linreg-regularization": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 35,
+      "written": true
     },
     "42-ml-linreg-ridge-l2": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 36,
+      "written": true
     },
     "43-ml-linreg-lasso-l1": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 35,
+      "written": true
     },
     "44-ml-linreg-l1-vs-l2": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 43,
+      "written": true
     },
     "45-ml-linreg-regularization-overfitting": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 33,
+      "written": true
     },
     "46-ml-linreg-coefficient-interpretation": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 38,
+      "written": true
     },
     "47-ml-linreg-limitations": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 27,
+      "written": true
     },
     "48-ml-linreg-when-works-poorly": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 28,
+      "written": true
     },
     "49-ml-linreg-why-still-used": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 33,
+      "written": true
     },
     "5-ml-linreg-bias-intercept": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 37,
+      "written": true
     },
     "50-ml-linreg-baseline-use-cases": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 29,
+      "written": true
     },
     "6-ml-linreg-features": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 44,
+      "written": true
     },
     "7-ml-linreg-target": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 41,
+      "written": true
     },
     "8-ml-linreg-prediction-meaning": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 40,
+      "written": true
     },
     "9-ml-linreg-how-prediction-computed": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 45,
+      "written": true
     },
     "1-ml-logreg-what-is-logistic-regression": {
       "lineCount": 3,

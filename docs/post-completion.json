@@ -1,6 +1,6 @@
 {
   "minLines": 5,
-  "generatedAt": "2026-03-31T23:23:07.006Z",
+  "generatedAt": "2026-03-31T23:50:20.055Z",
   "posts": {
     "1-what-is-machine-learning": {
       "lineCount": 266,
@@ -1003,204 +1003,204 @@
       "written": true
     },
     "1-ml-logreg-what-is-logistic-regression": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 34,
+      "written": true
     },
     "10-ml-logreg-decision-boundary": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 32,
+      "written": true
     },
     "11-ml-logreg-sigmoid": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 32,
+      "written": true
     },
     "12-ml-logreg-why-sigmoid": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 29,
+      "written": true
     },
     "13-ml-logreg-sigmoid-to-probability": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 44,
+      "written": true
     },
     "14-ml-logreg-sigmoid-range": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 36,
+      "written": true
     },
     "15-ml-logreg-probability-meaning": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 29,
+      "written": true
     },
     "16-ml-logreg-probability-to-class": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 30,
+      "written": true
     },
     "17-ml-logreg-threshold": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 33,
+      "written": true
     },
     "18-ml-logreg-threshold-0-5": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 32,
+      "written": true
     },
     "19-ml-logreg-when-change-threshold": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 33,
+      "written": true
     },
     "2-ml-logreg-why-classification": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 37,
+      "written": true
     },
     "20-ml-logreg-threshold-precision-recall": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 29,
+      "written": true
     },
     "21-ml-logreg-log-loss": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 33,
+      "written": true
     },
     "22-ml-logreg-why-log-loss": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 38,
+      "written": true
     },
     "23-ml-logreg-log-loss-vs-mse": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 35,
+      "written": true
     },
     "24-ml-logreg-mse-bad-for-classification": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 29,
+      "written": true
     },
     "25-ml-logreg-log-loss-formula": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 34,
+      "written": true
     },
     "26-ml-logreg-log-loss-penalty": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 28,
+      "written": true
     },
     "27-ml-logreg-confident-wrong-penalty": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 23,
+      "written": true
     },
     "28-ml-logreg-loss-near-correct": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 27,
+      "written": true
     },
     "29-ml-logreg-interpreting-log-loss": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 27,
+      "written": true
     },
     "3-ml-logreg-vs-linear-regression": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 47,
+      "written": true
     },
     "30-ml-logreg-why-minimize-log-loss": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 29,
+      "written": true
     },
     "31-ml-logreg-how-trained": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 26,
+      "written": true
     },
     "32-ml-logreg-why-gd": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 29,
+      "written": true
     },
     "33-ml-logreg-loss-gradient": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 27,
+      "written": true
     },
     "34-ml-logreg-parameters-update": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 30,
+      "written": true
     },
     "35-ml-logreg-learning-rate-effect": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 30,
+      "written": true
     },
     "36-ml-logreg-non-convergence": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 29,
+      "written": true
     },
     "37-ml-logreg-training-success": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 26,
+      "written": true
     },
     "38-ml-logreg-regularization": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 31,
+      "written": true
     },
     "39-ml-logreg-l1-effect": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 28,
+      "written": true
     },
     "4-ml-logreg-model-output": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 36,
+      "written": true
     },
     "40-ml-logreg-l2-effect": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 28,
+      "written": true
     },
     "41-ml-logreg-multiclass": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 38,
+      "written": true
     },
     "42-ml-logreg-multiclass-usage": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 34,
+      "written": true
     },
     "43-ml-logreg-one-vs-rest": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 35,
+      "written": true
     },
     "44-ml-logreg-softmax-regression": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 32,
+      "written": true
     },
     "45-ml-logreg-softmax-vs-sigmoid": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 35,
+      "written": true
     },
     "46-ml-logreg-limitations": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 28,
+      "written": true
     },
     "47-ml-logreg-when-poor": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 23,
+      "written": true
     },
     "48-ml-logreg-why-still-used": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 29,
+      "written": true
     },
     "49-ml-logreg-baseline": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 25,
+      "written": true
     },
     "5-ml-logreg-why-probability": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 37,
+      "written": true
     },
     "50-ml-logreg-simple-but-powerful": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 27,
+      "written": true
     },
     "6-ml-logreg-binary-classification": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 34,
+      "written": true
     },
     "7-ml-logreg-tasks": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 39,
+      "written": true
     },
     "8-ml-logreg-formula": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 34,
+      "written": true
     },
     "9-ml-logreg-logit": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 37,
+      "written": true
     },
     "1-ml-lossfn-what-is-loss": {
       "lineCount": 3,

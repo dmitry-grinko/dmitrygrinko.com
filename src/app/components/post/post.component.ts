@@ -51,7 +51,7 @@ export class PostComponent implements OnInit, AfterViewInit, OnDestroy {
     if (!this.post?.content || this.loading) {
       return;
     }
-    if (!event.ctrlKey || !event.shiftKey) {
+    if (event.ctrlKey || event.shiftKey || event.altKey || event.metaKey) {
       return;
     }
     if (this.isTypingTarget(event.target)) {

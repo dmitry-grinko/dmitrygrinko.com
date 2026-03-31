@@ -1,6 +1,6 @@
 {
   "minLines": 5,
-  "generatedAt": "2026-03-30T21:10:36.750Z",
+  "generatedAt": "2026-03-31T22:54:43.512Z",
   "posts": {
     "1-what-is-machine-learning": {
       "lineCount": 266,
@@ -603,204 +603,204 @@
       "written": true
     },
     "1-ml-data-what-is-data": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 26,
+      "written": true
     },
     "10-ml-data-feature-space": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 44,
+      "written": true
     },
     "11-ml-data-train-dataset": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 35,
+      "written": true
     },
     "12-ml-data-validation-dataset": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 36,
+      "written": true
     },
     "13-ml-data-test-dataset": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 27,
+      "written": true
     },
     "14-ml-data-why-split": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 37,
+      "written": true
     },
     "15-ml-data-split-proportions": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 56,
+      "written": true
     },
     "16-ml-data-no-test-in-training": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 31,
+      "written": true
     },
     "17-ml-data-holdout": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 39,
+      "written": true
     },
     "18-ml-data-cross-validation": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 38,
+      "written": true
     },
     "19-ml-data-when-cross-validation": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 34,
+      "written": true
     },
     "2-ml-data-why-foundation": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 39,
+      "written": true
     },
     "20-ml-data-small-dataset-issues": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 37,
+      "written": true
     },
     "21-ml-data-distribution": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 40,
+      "written": true
     },
     "22-ml-data-similar-train-test-distribution": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 31,
+      "written": true
     },
     "23-ml-data-dataset-shift": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 29,
+      "written": true
     },
     "24-ml-data-covariate-shift": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 37,
+      "written": true
     },
     "25-ml-data-concept-drift": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 37,
+      "written": true
     },
     "26-ml-data-drift-impact": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 31,
+      "written": true
     },
     "27-ml-data-detect-distribution-change": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 40,
+      "written": true
     },
     "28-ml-data-why-models-degrade": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 39,
+      "written": true
     },
     "29-ml-data-retrain-frequency": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 36,
+      "written": true
     },
     "3-ml-data-dataset-concept": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 51,
+      "written": true
     },
     "30-ml-data-leakage": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 31,
+      "written": true
     },
     "31-ml-data-leakage-types": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 44,
+      "written": true
     },
     "32-ml-data-leakage-unreliable": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 32,
+      "written": true
     },
     "33-ml-data-detect-leakage": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 43,
+      "written": true
     },
     "34-ml-data-prevent-leakage": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 46,
+      "written": true
     },
     "35-ml-data-missing-values": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 39,
+      "written": true
     },
     "36-ml-data-missing-handling-methods": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 42,
+      "written": true
     },
     "37-ml-data-imputation": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 45,
+      "written": true
     },
     "38-ml-data-when-drop-missing": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 34,
+      "written": true
     },
     "39-ml-data-missing-training-impact": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 31,
+      "written": true
     },
     "4-ml-data-types": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 73,
+      "written": true
     },
     "40-ml-data-outliers": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 43,
+      "written": true
     },
     "41-ml-data-outliers-problem": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 40,
+      "written": true
     },
     "42-ml-data-detect-outliers": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 49,
+      "written": true
     },
     "43-ml-data-outlier-methods": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 52,
+      "written": true
     },
     "44-ml-data-class-imbalance": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 47,
+      "written": true
     },
     "45-ml-data-why-imbalance-problem": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 43,
+      "written": true
     },
     "46-ml-data-imbalance-methods": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 42,
+      "written": true
     },
     "47-ml-data-augmentation": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 40,
+      "written": true
     },
     "48-ml-data-when-augmentation": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 29,
+      "written": true
     },
     "49-ml-data-quality-vs-model": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 32,
+      "written": true
     },
     "5-ml-data-feature-in-dataset": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 44,
+      "written": true
     },
     "50-ml-data-gigo": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 39,
+      "written": true
     },
     "6-ml-data-target-or-label": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 50,
+      "written": true
     },
     "7-ml-data-features-vs-target": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 42,
+      "written": true
     },
     "8-ml-data-observation-sample": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 37,
+      "written": true
     },
     "9-ml-data-dataset-dimensionality": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 44,
+      "written": true
     },
     "1-ml-linreg-what-is-linear-regression": {
       "lineCount": 3,

@@ -43,8 +43,15 @@ export class PostComponent implements OnInit, AfterViewInit, OnDestroy {
   showTagInput = false;
 
   @ViewChild('tagInput') private tagInputRef?: ElementRef<HTMLInputElement>;
+  @ViewChild('postMain') private postMainRef?: ElementRef<HTMLElement>;
 
   private tagsSub?: Subscription;
+
+  /** Horizontal swipe on narrow viewports: left → next, right → previous (same as → / ←). */
+  private postSwipeTouch: { x: number; y: number; t: number; id: number } | null = null;
+
+  private static readonly swipeMinPx = 56;
+  private static readonly swipeMaxMs = 550;
 
   constructor(
     private blogService: BlogService,
@@ -53,6 +60,25 @@ export class PostComponent implements OnInit, AfterViewInit, OnDestroy {
     private router: Router,
     private elementRef: ElementRef<HTMLElement>
   ) {}
+
+  @HostListener('document:touchend', ['$event'])
+  onDocumentTouchEnd(event: TouchEvent): void {
+    this.finishPostSwipeIfAny(event);
+  }
+
+  @HostListener('document:touchcancel', ['$event'])
+  onDocumentTouchCancel(event: TouchEvent): void {
+    if (!this.postSwipeTouch) {
+      return;
+    }
+    const id = this.postSwipeTouch.id;
+    for (let i = 0; i < event.changedTouches.length; i++) {
+      if (event.changedTouches.item(i)?.identifier === id) {
+        this.postSwipeTouch = null;
+        return;
+      }
+    }
+  }
 
   @HostListener('document:keydown', ['$event'])
   onDocumentKeydown(event: KeyboardEvent): void {
@@ -128,11 +154,19 @@ export class PostComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     this.elementRef.nativeElement.addEventListener('click', this.onPostImageClick);
+    const main = this.postMainRef?.nativeElement;
+    if (main) {
+      main.addEventListener('touchstart', this.onPostSwipeTouchStart, { passive: true });
+    }
   }
 
   ngOnDestroy(): void {
     this.tagsSub?.unsubscribe();
     this.elementRef.nativeElement.removeEventListener('click', this.onPostImageClick);
+    const main = this.postMainRef?.nativeElement;
+    if (main) {
+      main.removeEventListener('touchstart', this.onPostSwipeTouchStart);
+    }
   }
 
   /** Keeps tags in sync when storage changes (e.g. Reset in header). */
@@ -146,6 +180,83 @@ export class PostComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   /** Delegated handler: works after innerHTML updates (avoids race with setTimeout vs change detection). */
+  private onPostSwipeTouchStart = (event: TouchEvent): void => {
+    if (!this.isMobilePostSwipeViewport()) {
+      return;
+    }
+    if (this.shouldIgnorePostSwipe()) {
+      return;
+    }
+    if (event.touches.length !== 1) {
+      return;
+    }
+    const target = event.target;
+    if (this.isSwipeExcludedTarget(target)) {
+      return;
+    }
+    const t = event.touches[0];
+    this.postSwipeTouch = {
+      x: t.clientX,
+      y: t.clientY,
+      t: Date.now(),
+      id: t.identifier
+    };
+  };
+
+  private finishPostSwipeIfAny(event: TouchEvent): void {
+    const start = this.postSwipeTouch;
+    if (!start) {
+      return;
+    }
+    const touch = Array.from(event.changedTouches).find(ct => ct.identifier === start.id);
+    if (!touch) {
+      return;
+    }
+    this.postSwipeTouch = null;
+    if (!this.isMobilePostSwipeViewport() || this.shouldIgnorePostSwipe()) {
+      return;
+    }
+    const dt = Date.now() - start.t;
+    if (dt > PostComponent.swipeMaxMs) {
+      return;
+    }
+    const dx = touch.clientX - start.x;
+    const dy = touch.clientY - start.y;
+    const min = PostComponent.swipeMinPx;
+    if (Math.abs(dx) < min) {
+      return;
+    }
+    if (Math.abs(dy) > Math.abs(dx) * 0.72) {
+      return;
+    }
+    if (dx < 0) {
+      if (this.nextPost) {
+        void this.router.navigate(['/post', this.nextPost.slug]);
+      }
+    } else {
+      if (this.prevPost) {
+        void this.router.navigate(['/post', this.prevPost.slug]);
+      }
+    }
+  }
+
+  private isMobilePostSwipeViewport(): boolean {
+    return typeof matchMedia !== 'undefined' && matchMedia('(max-width: 768px)').matches;
+  }
+
+  private shouldIgnorePostSwipe(): boolean {
+    return this.loading || !this.post?.content || this.showImageViewer;
+  }
+
+  private isSwipeExcludedTarget(target: EventTarget | null): boolean {
+    if (!(target instanceof HTMLElement)) {
+      return true;
+    }
+    return !!target.closest(
+      'a, button, input, textarea, select, [contenteditable="true"], .tag-chip-remove'
+    );
+  }
+
   private onPostImageClick = (event: MouseEvent): void => {
     const target = event.target;
     if (!(target instanceof HTMLImageElement)) {

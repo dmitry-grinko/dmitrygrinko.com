@@ -12,7 +12,7 @@
   </div>
 </header>
 
-<main class="post-content">
+<main #postMain class="post-content">
   <div *ngIf="post && post.content" 
        class="content" 
        [innerHTML]="post.content">

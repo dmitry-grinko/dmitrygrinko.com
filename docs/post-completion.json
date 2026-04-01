@@ -1,6 +1,6 @@
 {
   "minLines": 5,
-  "generatedAt": "2026-03-31T23:53:32.156Z",
+  "generatedAt": "2026-04-01T00:22:44.408Z",
   "posts": {
     "1-what-is-machine-learning": {
       "lineCount": 266,
@@ -1203,204 +1203,204 @@
       "written": true
     },
     "1-ml-lossfn-what-is-loss": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 31,
+      "written": true
     },
     "10-ml-lossfn-differentiable": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 28,
+      "written": true
     },
     "11-ml-lossfn-mean-error-dataset": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 35,
+      "written": true
     },
     "12-ml-lossfn-why-average-batch": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 23,
+      "written": true
     },
     "13-ml-lossfn-batch-loss": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 36,
+      "written": true
     },
     "14-ml-lossfn-expected-loss": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 25,
+      "written": true
     },
     "15-ml-lossfn-minimization-improves": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 32,
+      "written": true
     },
     "16-ml-lossfn-affects-behavior": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 27,
+      "written": true
     },
     "17-ml-lossfn-different-tasks": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 32,
+      "written": true
     },
     "18-ml-lossfn-wrong-choice": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 25,
+      "written": true
     },
     "19-ml-lossfn-loss-gradients": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 27,
+      "written": true
     },
     "2-ml-lossfn-why-needed": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 31,
+      "written": true
     },
     "20-ml-lossfn-gradients-importance": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 25,
+      "written": true
     },
     "21-ml-lossfn-mse": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 38,
+      "written": true
     },
     "22-ml-lossfn-mse-tasks": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 34,
+      "written": true
     },
     "23-ml-lossfn-mse-outliers": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 23,
+      "written": true
     },
     "24-ml-lossfn-mae": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 30,
+      "written": true
     },
     "25-ml-lossfn-mae-vs-mse": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 29,
+      "written": true
     },
     "26-ml-lossfn-when-mae": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 23,
+      "written": true
     },
     "27-ml-lossfn-huber": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 28,
+      "written": true
     },
     "28-ml-lossfn-when-huber": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 25,
+      "written": true
     },
     "29-ml-lossfn-huber-vs-mse-mae": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 38,
+      "written": true
     },
     "3-ml-lossfn-vs-metric": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 40,
+      "written": true
     },
     "30-ml-lossfn-huber-tasks": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 24,
+      "written": true
     },
     "31-ml-lossfn-log-loss-cross-entropy": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 27,
+      "written": true
     },
     "32-ml-lossfn-why-cross-entropy": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 26,
+      "written": true
     },
     "33-ml-lossfn-ce-vs-mse": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 29,
+      "written": true
     },
     "34-ml-lossfn-ce-probabilities": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 30,
+      "written": true
     },
     "35-ml-lossfn-binary-cross-entropy": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 32,
+      "written": true
     },
     "36-ml-lossfn-categorical-cross-entropy": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 35,
+      "written": true
     },
     "37-ml-lossfn-when-categorical-ce": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 25,
+      "written": true
     },
     "38-ml-lossfn-logits": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 25,
+      "written": true
     },
     "39-ml-lossfn-logits-not-probs": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 30,
+      "written": true
     },
     "4-ml-lossfn-minimization-meaning": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 29,
+      "written": true
     },
     "40-ml-lossfn-softmax-cross-entropy": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 31,
+      "written": true
     },
     "41-ml-lossfn-regularization-loss": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 32,
+      "written": true
     },
     "42-ml-lossfn-why-regularization-in-loss": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 24,
+      "written": true
     },
     "43-ml-lossfn-l1": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 29,
+      "written": true
     },
     "44-ml-lossfn-l2": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 23,
+      "written": true
     },
     "45-ml-lossfn-regularization-params": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 28,
+      "written": true
     },
     "46-ml-lossfn-regularization-overfitting": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 21,
+      "written": true
     },
     "47-ml-lossfn-weighted-loss": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 23,
+      "written": true
     },
     "48-ml-lossfn-when-weighted": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 27,
+      "written": true
     },
     "49-ml-lossfn-class-imbalance-loss": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 26,
+      "written": true
     },
     "5-ml-lossfn-why-training": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 28,
+      "written": true
     },
     "50-ml-lossfn-choice-affects-model": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 29,
+      "written": true
     },
     "6-ml-lossfn-optimization-link": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 25,
+      "written": true
     },
     "7-ml-lossfn-objective": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 26,
+      "written": true
     },
     "8-ml-lossfn-objective-vs-loss": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 31,
+      "written": true
     },
     "9-ml-lossfn-per-example": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 32,
+      "written": true
     },
     "1-ml-gdopt-what-is-optimization": {
       "lineCount": 3,

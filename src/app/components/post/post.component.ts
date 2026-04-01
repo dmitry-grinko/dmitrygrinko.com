@@ -24,6 +24,14 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent implements OnInit, AfterViewInit, OnDestroy {
+  /** Ctrl + key (physical Key*, Russian layout OK). Cmd not used — avoids macOS/browser shortcuts. */
+  private static readonly tagHotkeys: Readonly<Record<string, string>> = {
+    KeyB: 'bookmark',
+    KeyR: 'read me',
+    KeyD: 'done',
+    KeyF: 'fix me'
+  };
+
   post: Post | null = null;
   prevPost: PostMetadata | null = null;
   nextPost: PostMetadata | null = null;
@@ -48,7 +56,24 @@ export class PostComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @HostListener('document:keydown', ['$event'])
   onDocumentKeydown(event: KeyboardEvent): void {
-    if (!this.post?.content || this.loading) {
+    if (this.loading || !this.post?.slug) {
+      return;
+    }
+
+    // Ctrl + B/R/D/F: quick tags (overrides reload / find / etc. on this page only)
+    if (event.ctrlKey && !event.metaKey) {
+      const tagLabel = PostComponent.tagHotkeys[event.code];
+      if (tagLabel) {
+        if (this.isTypingTarget(event.target)) {
+          return;
+        }
+        event.preventDefault();
+        this.addTagByHotkeyIfNeeded(tagLabel);
+        return;
+      }
+    }
+
+    if (!this.post?.content) {
       return;
     }
     if (event.ctrlKey || event.shiftKey || event.altKey || event.metaKey) {
@@ -78,6 +103,19 @@ export class PostComponent implements OnInit, AfterViewInit, OnDestroy {
       return false;
     }
     return !!target.closest('input, textarea, select, [contenteditable="true"]');
+  }
+
+  private addTagByHotkeyIfNeeded(label: string): void {
+    const slug = this.post?.slug;
+    if (!slug) {
+      return;
+    }
+    const current = this.postTagsService.getTagsForPost(slug);
+    if (current.some(t => t.toLowerCase() === label.toLowerCase())) {
+      return;
+    }
+    this.postTagsService.setTagsForPost(slug, [...current, label]);
+    this.postTags = this.postTagsService.getTagsForPost(slug);
   }
 
   ngOnInit() {

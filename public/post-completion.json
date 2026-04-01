@@ -1,6 +1,6 @@
 {
   "minLines": 5,
-  "generatedAt": "2026-04-01T00:22:44.408Z",
+  "generatedAt": "2026-04-01T20:59:24.138Z",
   "posts": {
     "1-what-is-machine-learning": {
       "lineCount": 266,
@@ -203,204 +203,204 @@
       "written": true
     },
     "1-ml-nn-what-is-neural-network": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 21,
+      "written": true
     },
     "10-ml-nn-linear-combination": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 22,
+      "written": true
     },
     "11-ml-nn-activation-function": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 21,
+      "written": true
     },
     "12-ml-nn-why-activation": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 17,
+      "written": true
     },
     "13-ml-nn-no-activation-linear": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 25,
+      "written": true
     },
     "14-ml-nn-relu": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 21,
+      "written": true
     },
     "15-ml-nn-why-relu": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 25,
+      "written": true
     },
     "16-ml-nn-sigmoid": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 21,
+      "written": true
     },
     "17-ml-nn-when-sigmoid": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 21,
+      "written": true
     },
     "18-ml-nn-tanh": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 17,
+      "written": true
     },
     "19-ml-nn-tanh-vs-sigmoid": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 23,
+      "written": true
     },
     "2-ml-nn-why-used": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 30,
+      "written": true
     },
     "20-ml-nn-activation-choice-impact": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 26,
+      "written": true
     },
     "21-ml-nn-what-is-layer": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 51,
+      "written": true
     },
     "22-ml-nn-input-layer": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 43,
+      "written": true
     },
     "23-ml-nn-hidden-layer": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 47,
+      "written": true
     },
     "24-ml-nn-output-layer": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 53,
+      "written": true
     },
     "25-ml-nn-info-through-layers": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 47,
+      "written": true
     },
     "26-ml-nn-forward-pass": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 36,
+      "written": true
     },
     "27-ml-nn-forward-pass-what-happens": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 61,
+      "written": true
     },
     "28-ml-nn-prediction": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 43,
+      "written": true
     },
     "29-ml-nn-output-computation": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 40,
+      "written": true
     },
     "3-ml-nn-vs-linear-models": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 27,
+      "written": true
     },
     "30-ml-nn-architecture-capabilities": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 52,
+      "written": true
     },
     "31-ml-nn-parameters": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 43,
+      "written": true
     },
     "32-ml-nn-millions-parameters": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 42,
+      "written": true
     },
     "33-ml-nn-what-is-training": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 36,
+      "written": true
     },
     "34-ml-nn-backpropagation": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 31,
+      "written": true
     },
     "35-ml-nn-why-backprop": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 25,
+      "written": true
     },
     "36-ml-nn-error-backward": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 33,
+      "written": true
     },
     "37-ml-nn-gradients": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 31,
+      "written": true
     },
     "38-ml-nn-gradients-update-weights": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 34,
+      "written": true
     },
     "39-ml-nn-why-gradient-descent": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 34,
+      "written": true
     },
     "4-ml-nn-artificial-neuron": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 27,
+      "written": true
     },
     "40-ml-nn-after-many-iterations": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 31,
+      "written": true
     },
     "41-ml-nn-vanishing-gradient": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 45,
+      "written": true
     },
     "42-ml-nn-exploding-gradients": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 42,
+      "written": true
     },
     "43-ml-nn-why-deep-hard": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 32,
+      "written": true
     },
     "44-ml-nn-architecture-stability": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 32,
+      "written": true
     },
     "45-ml-nn-what-is-deep-learning": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 32,
+      "written": true
     },
     "46-ml-nn-deep-vs-shallow": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 26,
+      "written": true
     },
     "47-ml-nn-why-deep-complex-deps": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 28,
+      "written": true
     },
     "48-ml-nn-deep-learning-domains": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 42,
+      "written": true
     },
     "49-ml-nn-limitations": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 28,
+      "written": true
     },
     "5-ml-nn-neuron-components": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 28,
+      "written": true
     },
     "50-ml-nn-why-ai-foundation": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 40,
+      "written": true
     },
     "6-ml-nn-neuron-inputs": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 26,
+      "written": true
     },
     "7-ml-nn-neuron-weights": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 25,
+      "written": true
     },
     "8-ml-nn-neuron-bias": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 23,
+      "written": true
     },
     "9-ml-nn-neuron-computation": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 21,
+      "written": true
     },
     "1-what-is-learning-paradigm-in-ml": {
       "lineCount": 51,
@@ -1403,604 +1403,604 @@
       "written": true
     },
     "1-ml-gdopt-what-is-optimization": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 39,
+      "written": true
     },
     "10-ml-gdopt-what-is-gradient-descent": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 33,
+      "written": true
     },
     "11-ml-gdopt-how-gradient-descent-works": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 22,
+      "written": true
     },
     "12-ml-gdopt-why-finds-minimum": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 30,
+      "written": true
     },
     "13-ml-gdopt-learning-rate": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 32,
+      "written": true
     },
     "14-ml-gdopt-lr-effect": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 30,
+      "written": true
     },
     "15-ml-gdopt-lr-too-large": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 27,
+      "written": true
     },
     "16-ml-gdopt-lr-too-small": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 23,
+      "written": true
     },
     "17-ml-gdopt-update-step": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 27,
+      "written": true
     },
     "18-ml-gdopt-parameter-update-each-iter": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 27,
+      "written": true
     },
     "19-ml-gdopt-training-iteration": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 24,
+      "written": true
     },
     "2-ml-gdopt-why-training-is-optimization": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 32,
+      "written": true
     },
     "20-ml-gdopt-epoch": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 25,
+      "written": true
     },
     "21-ml-gdopt-batch-gd": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 28,
+      "written": true
     },
     "22-ml-gdopt-batch-vs-sgd": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 37,
+      "written": true
     },
     "23-ml-gdopt-sgd": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 26,
+      "written": true
     },
     "24-ml-gdopt-why-sgd-practical": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 29,
+      "written": true
     },
     "25-ml-gdopt-mini-batch": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 33,
+      "written": true
     },
     "26-ml-gdopt-why-minibatch-standard": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 30,
+      "written": true
     },
     "27-ml-gdopt-batch-size-effect": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 32,
+      "written": true
     },
     "28-ml-gdopt-batch-size-gradient-stability": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 27,
+      "written": true
     },
     "29-ml-gdopt-gradient-noise": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 19,
+      "written": true
     },
     "3-ml-gdopt-loss-in-optimization": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 29,
+      "written": true
     },
     "30-ml-gdopt-why-noise-helps": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 21,
+      "written": true
     },
     "31-ml-gdopt-local-minimum": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 19,
+      "written": true
     },
     "32-ml-gdopt-local-vs-global-minimum": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 24,
+      "written": true
     },
     "33-ml-gdopt-saddle-point": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 23,
+      "written": true
     },
     "34-ml-gdopt-why-saddles-slow": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 25,
+      "written": true
     },
     "35-ml-gdopt-why-nn-optimization-harder": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 27,
+      "written": true
     },
     "36-ml-gdopt-convergence": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 21,
+      "written": true
     },
     "37-ml-gdopt-how-detect-convergence": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 23,
+      "written": true
     },
     "38-ml-gdopt-why-loss-stops-decreasing": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 23,
+      "written": true
     },
     "39-ml-gdopt-learning-rate-schedule": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 25,
+      "written": true
     },
     "4-ml-gdopt-loss-minimization-meaning": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 45,
+      "written": true
     },
     "40-ml-gdopt-why-change-lr": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 25,
+      "written": true
     },
     "41-ml-gdopt-momentum": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 28,
+      "written": true
     },
     "42-ml-gdopt-how-momentum-speeds": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 29,
+      "written": true
     },
     "43-ml-gdopt-adagrad": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 25,
+      "written": true
     },
     "44-ml-gdopt-rmsprop": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 28,
+      "written": true
     },
     "45-ml-gdopt-adam": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 24,
+      "written": true
     },
     "46-ml-gdopt-why-adam-used": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 21,
+      "written": true
     },
     "47-ml-gdopt-adam-vs-sgd": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 34,
+      "written": true
     },
     "48-ml-gdopt-when-sgd-better": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 21,
+      "written": true
     },
     "49-ml-gdopt-gradient-clipping": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 30,
+      "written": true
     },
     "5-ml-gdopt-model-parameter": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 37,
+      "written": true
     },
     "50-ml-gdopt-why-gradient-clipping": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 25,
+      "written": true
     },
     "6-ml-gdopt-parameters-affect-predictions": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 39,
+      "written": true
     },
     "7-ml-gdopt-gradient-definition": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 31,
+      "written": true
     },
     "8-ml-gdopt-gradient-largest-change": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 21,
+      "written": true
     },
     "9-ml-gdopt-gradient-for-updates": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 27,
+      "written": true
     },
     "1-ml-overfit-what-is-overfitting": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 28,
+      "written": true
     },
     "10-ml-overfit-small-datasets": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 25,
+      "written": true
     },
     "11-ml-overfit-what-is-generalization": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 26,
+      "written": true
     },
     "12-ml-overfit-why-generalization-goal": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 23,
+      "written": true
     },
     "13-ml-overfit-measure-generalization": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 30,
+      "written": true
     },
     "14-ml-overfit-train-good-test-bad": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 30,
+      "written": true
     },
     "15-ml-overfit-training-error": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 29,
+      "written": true
     },
     "16-ml-overfit-validation-error": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 27,
+      "written": true
     },
     "17-ml-overfit-track-both-errors": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 32,
+      "written": true
     },
     "18-ml-overfit-bias-variance-tradeoff": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 27,
+      "written": true
     },
     "19-ml-overfit-what-is-bias": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 22,
+      "written": true
     },
     "2-ml-overfit-why-happens": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 29,
+      "written": true
     },
     "20-ml-overfit-what-is-variance": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 22,
+      "written": true
     },
     "21-ml-overfit-high-variance-link": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 27,
+      "written": true
     },
     "22-ml-overfit-high-bias-link": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 27,
+      "written": true
     },
     "23-ml-overfit-bias-variance-balance": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 32,
+      "written": true
     },
     "24-ml-overfit-signs": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 25,
+      "written": true
     },
     "25-ml-overfit-detect-during-training": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 26,
+      "written": true
     },
     "26-ml-overfit-learning-curves": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 28,
+      "written": true
     },
     "27-ml-overfit-curves-detect": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 28,
+      "written": true
     },
     "28-ml-overfit-more-data-effect": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 23,
+      "written": true
     },
     "29-ml-overfit-when-more-data-helps": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 28,
+      "written": true
     },
     "3-ml-overfit-vs-underfit": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 33,
+      "written": true
     },
     "30-ml-overfit-data-vs-architecture": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 31,
+      "written": true
     },
     "31-ml-overfit-what-is-regularization": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 22,
+      "written": true
     },
     "32-ml-overfit-why-regularization-helps": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 25,
+      "written": true
     },
     "33-ml-overfit-l1-regularization": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 29,
+      "written": true
     },
     "34-ml-overfit-l2-regularization": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 25,
+      "written": true
     },
     "35-ml-overfit-l1-vs-l2": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 33,
+      "written": true
     },
     "36-ml-overfit-regularization-on-weights": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 29,
+      "written": true
     },
     "37-ml-overfit-regularization-reduces-complexity": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 23,
+      "written": true
     },
     "38-ml-overfit-weight-decay": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 23,
+      "written": true
     },
     "39-ml-overfit-weight-decay-l2": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 21,
+      "written": true
     },
     "4-ml-overfit-what-is-underfitting": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 25,
+      "written": true
     },
     "40-ml-overfit-when-regularization-hurts": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 26,
+      "written": true
     },
     "41-ml-overfit-dropout": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 23,
+      "written": true
     },
     "42-ml-overfit-why-dropout-helps": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 21,
+      "written": true
     },
     "43-ml-overfit-how-dropout-works": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 25,
+      "written": true
     },
     "44-ml-overfit-why-disable-dropout-inference": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 19,
+      "written": true
     },
     "45-ml-overfit-early-stopping": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 23,
+      "written": true
     },
     "46-ml-overfit-why-early-stopping": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 23,
+      "written": true
     },
     "47-ml-overfit-why-stop-earlier": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 21,
+      "written": true
     },
     "48-ml-overfit-architecture-choice": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 25,
+      "written": true
     },
     "49-ml-overfit-practical-methods": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 29,
+      "written": true
     },
     "5-ml-overfit-training-curve-look": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 27,
+      "written": true
     },
     "50-ml-overfit-why-core-problem": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 29,
+      "written": true
     },
     "6-ml-overfit-underfitting-curve-look": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 29,
+      "written": true
     },
     "7-ml-overfit-complexity-link": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 29,
+      "written": true
     },
     "8-ml-overfit-too-complex-model": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 29,
+      "written": true
     },
     "9-ml-overfit-dataset-size-effect": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 29,
+      "written": true
     },
     "1-ml-metrics-what-is-metric": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 27,
+      "written": true
     },
     "10-ml-metrics-why-val-test": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 21,
+      "written": true
     },
     "11-ml-metrics-accuracy": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 23,
+      "written": true
     },
     "12-ml-metrics-accuracy-formula": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 26,
+      "written": true
     },
     "13-ml-metrics-when-accuracy-good": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 25,
+      "written": true
     },
     "14-ml-metrics-accuracy-misleading": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 24,
+      "written": true
     },
     "15-ml-metrics-accuracy-imbalanced": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 21,
+      "written": true
     },
     "16-ml-metrics-confusion-matrix": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 25,
+      "written": true
     },
     "17-ml-metrics-confusion-elements": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 27,
+      "written": true
     },
     "18-ml-metrics-true-positives": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 21,
+      "written": true
     },
     "19-ml-metrics-true-negatives": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 21,
+      "written": true
     },
     "2-ml-metrics-vs-loss": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 25,
+      "written": true
     },
     "20-ml-metrics-fp-fn": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 28,
+      "written": true
     },
     "21-ml-metrics-precision": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 30,
+      "written": true
     },
     "22-ml-metrics-precision-formula": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 24,
+      "written": true
     },
     "23-ml-metrics-precision-use-cases": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 25,
+      "written": true
     },
     "24-ml-metrics-recall": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 30,
+      "written": true
     },
     "25-ml-metrics-recall-formula": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 24,
+      "written": true
     },
     "26-ml-metrics-recall-use-cases": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 25,
+      "written": true
     },
     "27-ml-metrics-precision-vs-recall": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 29,
+      "written": true
     },
     "28-ml-metrics-precision-recall-tradeoff": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 29,
+      "written": true
     },
     "29-ml-metrics-f1": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 23,
+      "written": true
     },
     "3-ml-metrics-why-used": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 25,
+      "written": true
     },
     "30-ml-metrics-f1-why-combines": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 29,
+      "written": true
     },
     "31-ml-metrics-roc-curve": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 26,
+      "written": true
     },
     "32-ml-metrics-roc-shows": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 30,
+      "written": true
     },
     "33-ml-metrics-tpr": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 28,
+      "written": true
     },
     "34-ml-metrics-fpr": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 26,
+      "written": true
     },
     "35-ml-metrics-auc": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 23,
+      "written": true
     },
     "36-ml-metrics-why-auc": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 21,
+      "written": true
     },
     "37-ml-metrics-auc-vs-accuracy": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 22,
+      "written": true
     },
     "38-ml-metrics-pr-curve": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 27,
+      "written": true
     },
     "39-ml-metrics-pr-vs-roc": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 23,
+      "written": true
     },
     "4-ml-metrics-one-not-enough": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 26,
+      "written": true
     },
     "40-ml-metrics-threshold-impact": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 31,
+      "written": true
     },
     "41-ml-metrics-regression-metrics": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 16,
+      "written": true
     },
     "42-ml-metrics-mse": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 23,
+      "written": true
     },
     "43-ml-metrics-rmse": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 27,
+      "written": true
     },
     "44-ml-metrics-mae": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 21,
+      "written": true
     },
     "45-ml-metrics-rmse-vs-mae": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 29,
+      "written": true
     },
     "46-ml-metrics-when-rmse": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 21,
+      "written": true
     },
     "47-ml-metrics-r2": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 22,
+      "written": true
     },
     "48-ml-metrics-interpret-r2": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 24,
+      "written": true
     },
     "49-ml-metrics-different-tasks": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 28,
+      "written": true
     },
     "5-ml-metrics-choice-by-task": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 35,
+      "written": true
     },
     "50-ml-metrics-multiple-metrics": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 27,
+      "written": true
     },
     "6-ml-metrics-choose-right": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 22,
+      "written": true
     },
     "7-ml-metrics-baseline": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 21,
+      "written": true
     },
     "8-ml-metrics-why-baseline": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 25,
+      "written": true
     },
     "9-ml-metrics-evaluation-dataset": {
-      "lineCount": 3,
-      "written": false
+      "lineCount": 24,
+      "written": true
     },
     "1-pt-tensor-what-is-tensor": {
       "lineCount": 3,
